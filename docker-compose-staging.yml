@@ -96,6 +96,7 @@ services:
       - mysql
     networks:
       - fut_laravel_stage
+    tty: true
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
