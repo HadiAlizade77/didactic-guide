@@ -104,6 +104,7 @@ RUN buildDeps='curl gcc make autoconf libc-dev zlib1g-dev pkg-config' \
 RUN groupadd -g 1002 main
 RUN useradd -g main -G main -s /bin/sh -M main
 
+ADD ./www.conf /usr/local/etc/php-fpm.d/www.conf
 
 RUN mkdir -p /var/www/html/main
 
