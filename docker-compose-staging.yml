@@ -89,7 +89,7 @@ services:
       dockerfile: Dockerfile
     container_name: php_s_staging_${SITE}
     ports:
-      - ${PHP_OLD_PORT}:9000
+      - ${PHP_OLD_PORT}:9001
     volumes:
       - ./main:/var/www/html/main
     depends_on:
