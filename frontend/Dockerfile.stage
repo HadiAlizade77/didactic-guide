@@ -3,6 +3,8 @@ FROM node:lts-alpine3.16
 # update and install dependency
 RUN apk update && apk upgrade
 RUN apk add git g++ make libpng-dev nasm yarn
+RUN apk add --update python make g++\
+   && rm -rf /var/cache/apk/*
 
 RUN addgroup -g 1008 front && adduser -G front -g front -s /bin/sh -D front
 RUN mkdir -p /var/www/html/frontend
