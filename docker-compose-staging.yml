@@ -7,17 +7,17 @@ networks:
         - subnet: ${SUBNET}/24
 
 services:
-  socketi:
-    image: quay.io/soketi/soketi:1.4-16-debian
-    container_name: socketi_staging_${SITE}
-    ports:
-      - 6001:6001
-      - 9601:9601
-    environment:
-      SOKETI_DEBUG: 1
-    networks:
-      - fut_laravel_stage
-    command: bin/server.js start
+  # socketi:
+  #   image: quay.io/soketi/soketi:1.4-16-debian
+  #   container_name: socketi_staging_${SITE}
+  #   ports:
+  #     - 6001:6001
+  #     - 9601:9601
+  #   environment:
+  #     SOKETI_DEBUG: 1
+  #   networks:
+  #     - fut_laravel_stage
+  #   command: bin/server.js start
 
   redis:
     image: redis:alpine
@@ -133,15 +133,15 @@ services:
     networks:
       - fut_laravel_stage
 
-  supervisor:
-    build:
-      context: ./supervisor
-      dockerfile: Dockerfile
-    container_name: supervisor_staging_${SITE}
-    volumes:
-      - ./backend:/var/www/html/backend
-    networks:
-      - fut_laravel_stage
+  # supervisor:
+  #   build:
+  #     context: ./supervisor
+  #     dockerfile: Dockerfile
+  #   container_name: supervisor_staging_${SITE}
+  #   volumes:
+  #     - ./backend:/var/www/html/backend
+  #   networks:
+  #     - fut_laravel_stage
 
   adminer:
     image: adminer
