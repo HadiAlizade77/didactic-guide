@@ -1,5 +1,5 @@
 server {
-    listen 80 default_server;
+    listen 80;
     listen 443 ssl;
     server_name ${NGINX_HOST};
     index index.php index.html index.htm;
