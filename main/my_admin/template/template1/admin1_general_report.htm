@@ -1,0 +1,150 @@
+{ADMIN_HEADER_HTML}
+<!-- Left Starts -->
+<div class="be-left-sidebar">
+    <div class="left-sidebar-wrapper">
+        <div class="left-sidebar-spacer">
+            <div class="left-sidebar-scroll" style="overflow-y:scroll!important;">
+				<div class="left-sidebar-content">
+				{LEFT_HTML}
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Left Ends -->
+<!-- Middle Starts -->
+<div class="be-content">
+  <div class="main-content container-fluid">
+    <h3>
+      <span style="margin-right: 5px;font-size: 26px;float: left;"><ion-icon name="bar-chart-outline"></ion-icon></span>{HEADING_TITLE}
+    </h3>
+    {update_message}
+    <section class="pt-2 pb-2">
+      <div class="row">
+        <div class="col-md-6">
+          <h4>{TABLE_HEADING_REPORT}</h4>
+        </div>
+        <div class="col-md-6">
+          {form}
+          <div class="btn-group float-right" role="group">
+              <!-- {TABLE_HEADING_STATISTICS} -->
+              {TABLE_HEADING_STATISTICS_YEAR}
+              {button}
+          </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="row">
+        <div class="col-md-6 col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>{TEXT_INFO_JOBSEEKERS}</td>
+                    <td>{TEXT_INFO_JOBSEEKERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_FEATURED_JOBSEEKERS}</td>
+                    <td>{TEXT_INFO_FEATURED_JOBSEEKERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_TOTAL_RECRUITERS}</td>
+                    <td>{TEXT_INFO_TOTAL_RECRUITERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_ACTIVE_RECRUITERS}</td>
+                    <td>{TEXT_INFO_ACTIVE_RECRUITERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_FEATURED_RECRUITERS}</td>
+                    <td>{TEXT_INFO_FEATURED_RECRUITERS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_SALES}</td>
+                    <td>{TEXT_INFO_SALES1}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <tbody>
+                  <tr>
+                    <td>{TEXT_INFO_TOTAL_JOBS}</td>
+                    <td>{TEXT_INFO_TOTAL_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_ACTIVE_JOBS}</td>
+                    <td>{TEXT_INFO_ACTIVE_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_EXPIRED_JOBS}</td>
+                    <td>{TEXT_INFO_EXPIRED_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_DELETED_JOBS}</td>
+                    <td>{TEXT_INFO_DELETED_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_FEATURED_JOBS}</td>
+                    <td>{TEXT_INFO_FEATURED_JOBS1}</td>
+                  </tr>
+                  <tr>
+                    <td>{TEXT_INFO_OTHER_JOBS}</td>
+                    <td>{TEXT_INFO_OTHER_JOBS1}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section>
+      <div class="row">
+        <div class="col-md-12 col-lg-12">
+          <div class="card card-table card-border-color card-border-color-primary shadow-sm">
+            <div class="card-header">
+              {TABLE_HEADING_REPORT_YEAR1}
+            </div>
+            <div class="card-body table-responsive">
+              <table class="table table-hover">
+                <tr class="admin-table-head-bar">
+                  <td>{TABLE_HEADING_MONTH}</td>
+                  <td>{TABLE_HEADING_JOBSEEKER}</td>
+                  <td>{TABLE_HEADING_FEATURED_JOBSEEKER}</td>
+                  <td>{TABLE_HEADING_JOB}</td>
+                  <td>{TABLE_HEADING_RECRUITER}</td>
+                  <td>{TABLE_HEADING_FEATURED_RECRUITER}</td>
+                  <td>{TABLE_HEADING_SALES}</td>
+                </tr>
+                <!-- BEGIN report -->
+                <tr {report.row_selected}>
+                  <td><b>{report.TEXT_INFO_MONTH}</b></td>
+                  <td>{report.TEXT_INFO_JOBSEEKERS2}</td>
+                  <td>{report.TEXT_INFO_FEATURED_JOBSEEKERS2}</td>
+                  <td>{report.TEXT_INFO_TOTAL_JOBS2}</td>
+                  <td>{report.TEXT_INFO_TOTAL_RECRUITERS2}</td>
+                  <td>{report.TEXT_INFO_FEATURED_RECRUITERS2}</td>
+                  <td>{report.TEXT_INFO_SALES2}</td>
+                </tr>
+                <!-- END report -->
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<!-- Right Ends -->
+{ADMIN_FOOTER_HTML}

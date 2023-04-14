@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>Job Board - Bootstrap Theme</title>
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/modern-business.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="css/style.css">
+        <!-- Gem style -->
+        <script src="js/modernizr.js"></script> <!-- Modernizr -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,700italic,800italic' rel='stylesheet' type='text/css'>
+        <link href="css/jobboard-bootstrap1.css" rel="stylesheet" type="text/css">
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="images/logo-jobboard.png" alt="Jobboard Logo"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#">Home</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Job Seeker <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Post Resume</a>
+                                </li>
+                                <li>
+                                    <a href="#">Search Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="#">Login</a>
+                                </li>
+                                <li>
+                                    <a href="#">Register</a>
+                                </li>
+                                <li>
+                                    <a href="#">View Applications</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Employer <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Post Jobs</a>
+                                </li>
+                                <li>
+                                    <a href="#">Search Resume</a>
+                                </li>
+                                <li>
+                                    <a href="#">Login</a>
+                                </li>
+                                <li>
+                                    <a href="#">Register</a>
+                                </li>
+                                <li>
+                                    <a href="#">Applicant Tracking</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Resources <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="#">Forum</a>
+                                </li>
+                                <li>
+                                    <a href="#">Articles</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="portfolio-item.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container -->
+        </nav>
+		<!---------------------------------------HEADER END---------------------------------------------------------------------------------------->
+		<!----------------------------  TEXT BEGINS----------------------------------------------------------------------------------------->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="welcome">
+                        <div class="row">
+                            <div class="col-md-5"><img src="images/banner.jpg"  onload="this.width/=1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-6">
+                                <h1>Welcome to Nextprofession.com</h1>
+                                <p>Weather you are looking for a job or an employee, we can help you find what you exactly need. From here, you can find the best careers, connecting companies with the most qualified individuals.</p>
+                                <center><button class="btn btn-lg btn-primary pull-left" onclick="location.href='#'" type="submit">job seeker login</button>
+                                    <button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">employer login</button>
+                                </center>
+                            </div>
+                        </div>
+                        <div class="search-block-home">
+                            <h2>quick job search</h2>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" placeholder="Keyword">
+                                </div>
+                                <div class="col-md-3">
+                                    <input type="text" class="form-control" placeholder="Location">
+                                </div>
+                                <div class="col-md-3">
+                                    <select name="ob_category[]" id="select" class="form-control">
+                                        <option value="0">Any Category</option>
+                                        <option value="59">Arts & Design</option>
+                                        <option value="51">Automotive</option>
+                                        <option value="60">Aviation/Airlines</option>
+                                        <option value="65">Banking & Financial Services</option>
+                                        <option value="61">Call Centre/BPO</option>
+                                        <option value="20">Chief Accounting Officer</option>
+                                        <option value="62">Construction/Architecture</option>
+                                        <option value="23">Consulting Services</option>
+                                        <option value="4">Courier/Distribution/Logistics</option>
+                                        <option value="24">CustomerSupport/Telemarketing</option>
+                                        <option value="25">Education/Training</option>
+                                        <option value="26">Engineering/Manufacturing</option>
+                                        <option value="27">Entertainment/Media</option>
+                                        <option value="5">Environmental</option>
+                                        <option value="52">Export/Import</option>
+                                        <option value="63">Fashion/Garments</option>
+                                        <option value="12">Foodservice Industry</option>
+                                        <option value="29">Government Services</option>
+                                        <option value="30">HealthCare/Pharma</option>
+                                        <option value="31">Hospitality/Travel/Tourism</option>
+                                        <option value="7">Insurance</option>
+                                        <option value="8">Internet/E-Commerce</option>
+                                        <option value="32">IT/Hardware</option>
+                                        <option value="33">IT/Software</option>
+                                        <option value="9">Legal/Company Secretarial</option>
+                                        <option value="34">Maintenance/Repair</option>
+                                        <option value="10">Media/Publishing</option>
+                                        <option value="66">Mining</option>
+                                        <option value="35">Oil/Gas/Utilities</option>
+                                        <option value="17">Others</option>
+                                        <option value="36">Production/Operations</option>
+                                        <option value="72">Property Manager</option>
+                                        <option value="18">Purchase/ Supply Chain</option>
+                                        <option value="6">Recruitment/HR</option>
+                                        <option value="37">Retail/Wholesale</option>
+                                        <option value="38">Sales/Business Development</option>
+                                        <option value="39">Science/Research/Development</option>
+                                        <option value="11">Sports and Recreation</option>
+                                        <option value="40">Supply Chain/Logistics</option>
+                                        <option value="19">Telecom/ ISP</option>
+                                        <option value="41">Transportation/Warehousing</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-danger">
+                                    <span class="glyphicon glyphicon-search"></span> Search
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- End Sarch Block -->
+                    </div>
+                </div>
+                <div class="col-md-4 create-account">
+                    <h2>create an account</h2>
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#home">I’m a Job Seeker</a></li>
+                        <li><a data-toggle="tab" href="#menu1">I’m a an Employer</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="home" class="tab-pane fade in active">
+                            <p class="signup-right">
+                                <input type="text" class="form-control signup" placeholder="E-mail Address">
+                                <input type="password" class="form-control signup" placeholder="Password">
+                                <input type="password" class="form-control signup" placeholder="Verify Password">
+                                <button class="btn btn-lg btn-info" onclick="location.href='#'" type="submit">Register Now >></button> <span class="signin">Or <a href="#">Sign In</a></span>
+                            </center>
+                            </p>
+                        </div>
+                        <div id="menu1" class="tab-pane fade">
+                            <p class="signup-right">
+                                <input type="text" class="form-control signup" placeholder="E-mail Address">
+                                <input type="password" class="form-control signup" placeholder="Password">
+                                <input type="password" class="form-control signup" placeholder="Verify Password">
+                                <button class="btn btn-lg btn-info" onclick="location.href='#'" type="submit">Register Now >></button> <span class="signin">Or <a href="#">Sign In</a></span>
+                            </center>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Job Section -->
+            <div class="row">
+                <div class="col-lg-10">
+                    <div class="row jobs-by-category">
+                        <div class="col-lg-3 vline">
+                            <h2>Resume services</h2>
+                            <ul class="articles">
+                                <li><img src="images/resume.png" align="left" class="article"> <a href="#">Resume Display</a><br>Let 50,000 employers<br>seeyour resume</li>
+                                <br>
+                                <li><img src="images/resume-development.png" align="left" class="article"> <a href="#">Resume Development</a><br>Get a resume that gets you interview calls</li>
+                                <br>
+                                <li><img src="images/resume-flash.png" align="left" class="article"> <a href="#">Resume Flash</a><br>Maximize your resume's visibility</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 vline">
+                            <h2>Jobs By Category</h2>
+                            <ul class="jobs-by-category2">
+                                <li><a href="#">Accounting/Finance  (125)</a></li>
+                                <li><a href="#">Arts & Design (525)</a></li>
+                                <li><a href="#">Call Centre/BPO (105)</a></li>
+                                <li><a href="#">Courier/Distribut  (452)</a></li>
+                                <li><a href="#">Accounting/Finance  (125)</a></li>
+                                <li><a href="#">Arts & Design (525)</a></li>
+                                <li><a href="#">Courier/Distribut  (452) </a></li>
+                                <li><a href="#">Call Centre/BPO (105)</a></li>
+                                <li><a href="#">Courier/Distribut  (452)</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-3 vline">
+                            <h2>latest jobs</h2>
+                            <p class="job-title"><a href="#">Senior PHP Developer</a><br>
+                                Microsoft<br>
+                                New York, USA
+                            <p>
+                            <p class="job-title"><a href="#">Database Administrator</a><br>
+                                Microsoft<br>
+                                New York, USA
+                            <p>
+                            <p class="job-title"><a href="#">Android Application Developer</a><br>
+                                Microsoft<br>
+                                New York, USA
+                            <p>
+                        </div>
+                        <div class="col-lg-3">
+                            <h2>articles</h2>
+                            <ul class="articles">
+                                <li><img src="images/career1.jpg" align="left" class="article"> <a href="#">How to Reinvent..</a><br>If you work long enough, somet.....</li>
+                                <br>
+                                <li><img src="images/career2.jpg" align="left" class="article"> <a href="#">How to Reinvent..</a><br>If you work long enough, somet.....</li>
+                                <br>
+                                <li><img src="images/career3.jpg" align="left" class="article"> <a href="#">How to Reinvent..</a><br>If you work long enough, somet.....</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="featured-employer">
+                        <div class="row">
+                            <h2>Employer Spotlight</h2>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos1.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos2.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos3.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos4.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos5.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos6.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos7.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos8.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos9.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos10.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos11.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                            <div class="col-lg-2">
+                                <center><img src="images/featured-logos12.jpg" class="featured-logo thumbnail img-responsive img-hover"></center>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 homepage-ad"><img src="images/advertisement.jpg" class="pull-right" align="right"></div>
+            </div>
+        </div>
+        <hr>
+        <!-- Page Content -->
+        <!-- /.container -->
+		<!----------------------------------------  TEXT  ENDS-------------------------------------------------------------------------------------->		
+		<!--------------------------------------  FOOTER BEGINS---------------------------------------------------------------------------------------->
+        <div class="container-fluid footer-container">
+            <!-- Footer -->
+            <footer class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <img src="images/logo-jobboard.png" alt="Jobboard Logo" class="footer-logo">
+                        <br><br>
+                        <p class="copyright">© 2016 Nextprofession.com</p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p><strong>JOB SEEKER</strong></p>
+                        <p><a href="#">Register Now</a></p>
+                        <p><a href="#">Search Jobs</a></p>
+                        <p><a href="#">Login</a></p>
+                        <p><a href="#">View Applications</a></p>
+                        <p><a href="#">Job Alerts</a></p>
+                        <p><a href="#">Post Resume</a></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p><strong>EMPLOYER</strong></p>
+                        <p><a href="#">Post a Job</a></p>
+                        <p><a href="#">Search Resume</a></p>
+                        <p><a href="#">Sign In</a></p>
+                        <p><a href="#">Register Now</a></p>
+                        <p><a href="#">Resume Alerts</a></p>
+                        <p><a href="#">Applicant Tracking</a></p>
+                    </div>
+                    <div class="col-lg-2">
+                        <p><strong>INFORMATION</strong></p>
+                        <p><a href="aboutus.html">About Us</a></p>
+                        <p><a href="#">Terms & Conditions</a></p>
+                        <p><a href="#">Privacy Policy</a></p>
+                        <p><a href="#">Resources</a></p>
+                        <p><a href="#">Sitemap</a></p>
+                        <p><a href="#">Contact Us</a></p>
+                    </div>
+                    <div class="col-lg-3">
+                        <p><strong>JOIN THE CONVERSATION</strong></p>
+                        <ul class="social-network social-circle">
+                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" class="icoGoogle-plus" title="Google-plus"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="icoMobile-phone" title="Mobile-phone"><i class="fa fa-mobile-phone"></i></a></li>
+                            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        </ul>
+                        <br> <br>
+                        <a href="#"><img src="images/app-store.png" alt="Logo"></a>
+                        <a href="#"><img src="images/gplay.png" alt="Logo"></a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Script to Activate the Carousel -->
+        <script>
+            $('.carousel').carousel({
+                interval: 5000 //changes the speed
+            })
+        </script>
+        <a href="#0" class="cd-top">Top</a>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="js/main.js"></script> <!-- Gem jQuery -->
+    </body>
+</html>

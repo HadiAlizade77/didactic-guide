@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://remotephase.com/rss/">
+<channel>
+<title>IT/Software RSS - REMOTEPHASE</title>
+<description>IT/Software jobs </description>
+<link>https://remotephase.com/</link><copyright>Copyright 2023 remotephase.com All Rights Reserved</copyright>
+<job:link  href="http://remotephase.com/rss/33.xml" rel="self" type="application/rss+xml"/>
+<item>
+<title>CSS expert</title>
+<description>testing css</description>
+<job:country>United States</job:country>
+<job:state>Delaware</job:state>
+<job:location></job:location>
+<link>https://remotephase.com/9/CSS-expert.html</link>
+<guid>https://remotephase.com/9/CSS-expert.html</guid>
+</item>
+<item>
+<title>PHP Developer</title>
+<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus ultrices dolor, sit amet commodo nisl vestibulum quis. Suspendisse ac nisi et ligula aliquam gravida non vel quam. Duis vitae urna at nulla ultricies vulputate. Aliquam commodo pulvinar urna, vel scelerisque diam ullamcorper nec. Vivamus porttitor in ex ut malesuada. Nam ac euismod magna. Suspendisse dictum lobortis tortor nec vestibulum. Curabitur vel sollicitudin dui, et tristique mi. Etiam a tellus turpis.</description>
+<job:country>United States</job:country>
+<job:state>California</job:state>
+<job:location>California</job:location>
+<link>https://remotephase.com/5/PHP-Developer.html</link>
+<guid>https://remotephase.com/5/PHP-Developer.html</guid>
+</item>
+<item>
+<title>AI Engineer</title>
+<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus ultrices dolor, sit amet commodo nisl vestibulum quis. Suspendisse ac nisi et ligula aliquam gravida non vel quam. Duis vitae urna at nulla ultricies vulputate. Aliquam commodo pulvinar urna, vel scelerisque diam ullamcorper nec. Vivamus porttitor in ex ut malesuada. Nam ac euismod magna. Suspendisse dictum lobortis tortor nec vestibulum. Curabitur vel sollicitudin dui, et tristique mi. Etiam a tellus turpis.</description>
+<job:country>United States</job:country>
+<job:state>California</job:state>
+<job:location>California</job:location>
+<link>https://remotephase.com/6/AI-Engineer.html</link>
+<guid>https://remotephase.com/6/AI-Engineer.html</guid>
+</item>
+<item>
+<title>PHP Engineer</title>
+<description>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque cursus ultrices dolor, sit amet commodo nisl vestibulum quis. Suspendisse ac nisi et ligula aliquam gravida non vel quam. Duis vitae urna at nulla ultricies vulputate. Aliquam commodo pulvinar urna, vel scelerisque diam ullamcorper nec. Vivamus porttitor in ex ut malesuada. Nam ac euismod magna. Suspendisse dictum lobortis tortor nec vestibulum. Curabitur vel sollicitudin dui, et tristique mi. Etiam a tellus turpis.</description>
+<job:country>United States</job:country>
+<job:state>California</job:state>
+<job:location>Remote</job:location>
+<link>https://remotephase.com/7/PHP-Engineer.html</link>
+<guid>https://remotephase.com/7/PHP-Engineer.html</guid>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,67 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row">
+		<div class="col-md-3">
+		<!-- Left Starts -->
+		{LEFT_HTML}
+		<!-- Left Ends --> 
+		</div>			
+					
+        <div class="col-md-9">
+		    <div class="row">
+				<div class="col-md-12">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message}
+            <div class="card card-custom">
+                <div class="card-body card-body-custom p-0">
+				
+			<div class="table-responsive-sm">
+			<table class="table table-hover">
+															<tr class="jobs-table-headbar">
+																<td class="style30" width="45%">{TABLE_HEADING_RESUME_NAME}</td>
+																<td class="style30" width="35%"  align="center">{TABLE_HEADING_COMPANY_NAME}</td>
+																<td class="style30" align="middle" width="20%">{TABLE_HEADING_INSERTED}</td>
+															</tr>
+													 	<!-- BEGIN statistics -->
+														 <tr{statistics.row_selected}>
+															 <td valign="top" class="dataTableContent">{statistics.resume_name}</td>
+															 <td valign="top" class="dataTableContent" align="center">{statistics.company_name}</td>
+															 <td valign="top" class="dataTableContent" align="center">{statistics.viewed_on}</td>
+															</tr>
+														 <!-- END statistics -->
+															<form name="page" method="post">
+                  <tr>
+                   <td colspan="2">{total}</td>
+				   <td valign="top" align="right" class="label">{list_page}&nbsp;{page}&nbsp;</td>
+                  </tr>
+				  </form>
+				</table>
+				</div>									
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

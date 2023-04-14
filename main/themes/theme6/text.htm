@@ -1,0 +1,92 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<div class="container-fluid bg-white">
+<div class="container max-width mb-xxl-4">
+  <div class="row">
+    <h2 class="col-12 text-center mt-5 mb-4 Text-Light lead fw-bolder">{FEATURED_RECRUITERS}</h2>
+  </div>
+  <div class="row row-cols-2 row-cols-md-6 g-4">
+    <!-- BEGIN featured -->
+    <div class="col">
+      {featured.employer}
+    </div>
+    <!-- END featured -->
+  </div>
+</div>
+
+<div class="container max-width">
+  <div class="row">
+    <!-- BEGIN latest_jobs -->
+    <div class="col-12">
+      <div class="card card-animation job-featured border card-hover {latest_jobs.job_featured}">
+        <div class="card-body py-0">
+          <div class="row">
+            <div class="col-7 text-left m-w-100">
+              <div class="flex-shrink-0">
+                {latest_jobs.logo}
+              </div>
+              <h3 class="title m-0">{latest_jobs.title}</h3>
+              <div class="title-info form">
+                <span class="">{latest_jobs.company}
+                  <span class="mx-2">{latest_jobs.location}</span>
+                  <span class="mx-2">{latest_jobs.salary}</span>
+                  <span class="mx-2">{latest_jobs.experience}</span>
+              </div>
+            </div>
+            <div class="col-5 d-flex align-items-center text-right justify-content-end gap-5 m-w-100 d-initial">
+              <span class="text-muted small mr-4">{latest_jobs.job_posted}</span>
+              <span class="">{latest_jobs.jobtype}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END latest_jobs -->
+    <div class="col-12 text-center">{ALL_JOBS}</div>
+  </div>
+</div>
+
+
+<div class="container max-width mt-5 mb-xxl-4">
+  <!-- Career Article Section -->
+  <div class="text-center mt-5">
+    <div class="col-lg-12 mb-4 mt-5 mobile-margin-top">
+      <h1 class="display-4 heading-theme1">
+        {LATEST_ARTICLES}
+      </h1>
+      <p class="text-muted for-mobile mt-2">{LATEST_ARTICLES_TEXT}</p>
+    </div>
+    <div class="row">
+
+      {ARTICLE_HOME}
+    </div>
+    <div class="col-lg-12">{ALL_ARTICLES}</div>
+  </div>
+</div>
+<!-- /.row -->
+
+<!-- Call to Action Section -->
+
+<div class="container-fluid sub-footer-bg mt-xxl-5">
+  <div class="container max-width">
+    <div class="mobile-margin-top">
+      <div class="row">
+        <div class="align-items-center col-md-8 mx-auto text-center">
+          <h3 class="mb-4 fw-bold text-white">{GET_EMAIL_TEXT}</h3>
+          <div class="d-flex align-items-center text-center input-group input-group2">
+            {CREATE_ALERT}
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+<!-- /.container -->
+{FOOTER_HTML}

@@ -1,0 +1,73 @@
+DirectoryIndex index.php index.htm index.html
+#ErrorDocument 404 https://remotephase.com/404.shtml
+#php_value session.use_trans_sid 0
+#php_value register_globals 0
+#php_value magic_quotes_gpc on
+#php_value register_long_arrays on
+
+
+RewriteEngine on
+#RewriteBase /
+RewriteCond %{HTTPS} !=on
+RewriteRule ^.*$ https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+RewriteCond %{HTTP:Profile} !^[a-z0-9\"]+ [NC]
+
+RewriteCond %{QUERY_STRING} base64_encode.*\(.*\) [OR]
+RewriteCond %{QUERY_STRING} (\<|%3C).*script.*(\>|%3E) [NC,OR]
+#RewriteCond %{QUERY_STRING} (\<|%3C).*iframe.*(\>|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index_error.php [F,L]
+RewriteCond %{REQUEST_METHOD} ^(TRACE|TRACK)
+RewriteRule .* - [F]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-.,0-9a-zA-z]*)-jobfair\.html$  jobfair.php?jobfair_seo=$1 [L]
+RewriteRule ^mobile/([-.,0-9a-zA-z]*)-jobfair\.html$  mobile/jobfair.php?jobfair_seo=$1 [L]
+
+
+RewriteRule  ^job/([-.,_0-9a-zA-z]*)/apply$ apply_now.php?query_string=$1 [L]
+#RewriteRule ^/([0-9]+)\d$ company_details.php?query_string=$1
+
+RewriteRule ^article_cat_([1-9][0-9]*)\.html$  article.php?cat_path=$1 [L]
+RewriteRule ^article_([1-9][0-9]*)\.html$  article.php?article_id=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^company\/([-.,0-9a-zA-z]*)\/$  company_profile.php?company=$1 [L]
+RewriteRule ^company-([-.,0-9a-zA-z]*)\/$  company_details.php?company=$1 [L]
+RewriteRule ^([-.,0-9a-zA-z]*)\.html$  article.php?article_seo=$1 [L]
+
+RewriteRule ^([1-9][0-9]*)/([-.,0-9a-zA-z]*)-jobs\.html?$ job_search_by_industry.php?search_category=$1  [L]
+
+
+RewriteCond %{QUERY_STRING} action=(.*)
+RewriteRule ^([1-9][0-9]*)/([-.,_0-9a-zA-z]*)\.html$  job_details.php?query_string=$1&action=%1 [L]
+RewriteRule ^([1-9][0-9]*)/([-.,_0-9a-zA-z]*)\.html$  job_details.php?query_string=$1 [L]
+
+RewriteRule ^jobskill$ job_search_by_skill.php [L]
+RewriteRule ^jobskill/$ job_search_by_skill.php [L]
+
+#RewriteRule ^jobskill/([\+-.,0-9a-zA-zâ]*)-jobs$ job_search_by_skill.php?skill=$1  [L]
+RewriteRule ^jobskill/(.*)-jobs$ job_search_by_skill.php?skill=$1  [L]
+
+
+RewriteRule ^forum/([1-9][0-9]*)/([-.,0-9a-zA-z]*)\.html$ forum/forum_topics.php?forum_id=$1 [L]
+RewriteRule ^forum/([-.,0-9a-zA-z]*)_([1-9][0-9]*)\.html$ forum/topic_details.php?topic_id=$2 [L]
+RewriteRule ^mobile/([1-9][0-9]*)/([-.,_0-9a-zA-z]*)\.html$  mobile/job_details.php?query_string=$1 [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-.,0-9a-zA-z]*)/([-.,0-9a-zA-z]*)/$ job_search_by_location.php?country=$2  [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([-.,0-9a-zA-z]*)/([-.,0-9a-zA-z]*)/([-.,0-9a-zA-z]*)/$ job_search_by_location.php?action=search&state=$3  [L]
+
+RewriteRule ^quiz/([1-9][0-9]*)/([-.,0-9a-zA-z]*)\.html$ quiz/quiz_topics.php?quiz_id=$1 [L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php74” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74___lsphp .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit

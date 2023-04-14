@@ -1,0 +1,220 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+	// <!--
+	function search_company(company_name) {
+		document.company_search.company_name.value = company_name;
+		document.company_search.submit();
+	}
+	//-->
+</script>
+<div class="container-fluid bg-white pb-5">
+<div class="container">
+	<div class="row row-cols-1 row-cols-md-4 g-4 mb-4 text-center">
+		<div class="col">
+			<div class="card  card-theme4">
+				<img src="themes/theme4/images/jobs-by-category.jpg" alt="" class="card-img-top">
+				<div class="card-body pb-4">
+					<p class="para-theme4">Browse Job openings by Functional Area/Industry and join the Team</p>
+					{JOBS_BY_CATEGORY}
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card  card-theme4">
+				<img src="themes/theme4/images/jobs-by-location.jpg" alt="" class="card-img-top ">
+				<div class="card-body pb-4">
+					<p class="para-theme4">We're building company across the world, View Job Openings by location</p>
+					{JOBS_BY_LOCATION}
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card  card-theme4">
+				<img src="themes/theme4/images/resume-alert.jpg" alt="" class="card-img-top ">
+				<div class="card-body pb-4">
+					<p class="para-theme4">Get latest Job Alerts on email about new jobs matching your skills</p>
+					{RESUME_ALERT}
+				</div>
+			</div>
+		</div>
+		<div class="col">
+			<div class="card  card-theme4">
+				<img src="themes/theme4/images/newsletter.jpg" alt="" class="card-img-top ">
+				<div class="card-body pb-4">
+					<p class="para-theme4">Sign up for company email newsletter covering variety of topics</p>
+					{NEWSLETTER}
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+<div class="container">
+	<div class="row mt-3">
+		<h5 class="card-header bg-white">{INFO_TEXT_LATEST_JOBS}</h5>
+		<!-- BEGIN latest_jobs -->
+		<div class="col-md-4 mb-4">
+			<div class="card card-custom card-hover {latest_jobs.job_featured}" style="height: 194px;">
+				<div class="card-body card-body-custom px-3 align-items-center">
+					<div class="d-flex align-items-top">
+						<div class="flex-shrink-0 job-img">
+							{latest_jobs.clogo}
+						</div>
+						<div class="flex-grow-1 ms-3">
+							<h5 class="job-title-theme1 mb-1 text-capitalize">{latest_jobs.title}</h5>
+							<p class="m-0 small"><i class="bi bi-building me-1"></i> {latest_jobs.company}</p>
+							<p class="m-0 small">{latest_jobs.location}</p>
+							<p class="m-0 small"><i class="bi bi-currency-dollar"></i> {latest_jobs.salary}</p>
+							<p class="m-0 small"><i class="bi bi-calendar4-week"></i> {latest_jobs.job_posted}</p>
+							<p class="m-0 small"><i class="bi bi-briefcase"></i> {latest_jobs.experience}</p>
+							<p class="m-0 small">{latest_jobs.jobtype}</p>
+							<!-- <p class="text-muted mt-2 para-theme1">{latest_jobs.summary}</p> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- END latest_jobs -->
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<div class="col-sm-9 col-md-9 pt-0">
+			<div class="row mb-4">
+				<div class="col-md-12 pt-0 ">
+					<div class="card   card-theme4">
+						<div class="card-body">
+							<h5 class="mb-3 theme4-heading-color">Featured Recruiter</h5>
+							<div class="row">
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B1}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B2}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B3}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B4}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B5}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B6}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B7}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B8}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B9}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B10}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B11}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mobile-featured-recruiter">{B12}
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<div class="row">
+				<div class="col-md-12">
+
+					<ul class="nav nav-pills mb-2" id="pills-tab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
+								data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
+								aria-selected="true">Industry</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
+								data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
+								aria-selected="false">Location</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
+								data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
+								aria-selected="false">Company</button>
+						</li>
+					</ul>
+					<div class="tab-content" id="pills-tabContent">
+						<div class="tab-pane fade show active" id="pills-home" role="tabpanel"
+							aria-labelledby="pills-home-tab" tabindex="0">
+							<div class="card card-theme4 ">
+								<div class="card-body">
+									{JOB_CATEGORY}
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="pills-profile" role="tabpanel"
+							aria-labelledby="pills-profile-tab" tabindex="0">
+							<div class="card card-theme4 ">
+								<div class="card-body">
+									{JOB_LOCATION}
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="pills-contact" role="tabpanel"
+							aria-labelledby="pills-contact-tab" tabindex="0">
+							<div class="card card-theme4 ">
+								<div class="card-body">
+									{JOB_COMPANY}
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+
+		<div class="col-sm-3 col-md-3">
+			<div class="card mb-4 theme4-color-box1 card-theme4 mmt-15">
+				<div class="card-body">
+					<h5 class="mb-3 theme4-heading-color">Job Seeker</h5>
+					<p class="para-theme4">Search job openings in jobboard and post your resume</p>
+					<div>{REGISTER_CV}</div>
+				</div>
+			</div>
+
+			<div class="card mb-4 theme4-color-box2  card-theme4">
+				<div class="card-body">
+					<h5 class="theme4-heading-color">Recruiting?</h5>
+					<p class="para-theme4">Search resumes in job board and post your jobs</p>
+					{START_RECRUITING}
+				</div>
+			</div>
+
+			<div class="card theme4-color-box3  card-theme4">
+				<div class="card-body">
+					<p class="para-theme4">Get daily emails in your inbox with jobs that match your industry or sector
+						when an opportunity opens up.</p>
+					{CREATE_ALERT}
+				</div>
+			</div>
+
+		</div>
+
+			<!-- Latest articles -->
+			<div class="container">
+				<div class="text-center mt-5">
+					<div class="col-lg-12 d-flex align-items-center mb-3">
+						<h3 class="m-0">
+							{LATEST_ARTICLES}
+							</h1>
+							<div class="d-flex ms-auto">{ALL_ARTICLES}</div>
+					</div>
+					<div class="row g-3">
+						{ARTICLE_HOME}
+					</div>
+				</div>
+			</div>
+	</div>
+</div>
+</div>
+{FOOTER_HTML}

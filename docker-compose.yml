@@ -1,0 +1,128 @@
+version: "3"
+
+networks:
+  fut_laravel_production:
+    ipam:
+      config:
+        - subnet: ${SUBNET}/24
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: redis_production_${SITE}
+    restart: unless-stopped
+    ports:
+      - ${REDIS_PORT}:6379
+    networks:
+      - fut_laravel_production
+
+  mysql:
+    image: mysql:5.7.29
+    container_name: mysql_production_${SITE}
+    restart: unless-stopped
+    tty: true
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      SERVICE_TAGS: ${SERVICE_TAGS}
+      SERVICE_NAME: ${SERVICE_NAME}
+    networks:
+      - fut_laravel_production
+
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: php_production_${SITE}
+    ports:
+      - ${PHP_PORT}:9000
+    volumes:
+      - ./backend:/var/www/html/backend
+    networks:
+      - fut_laravel_production
+
+  site:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.prod
+    container_name: nginx_production_${SITE}
+    ports:
+      - ${ADMIN_PORT}:80
+    environment:
+      - NGINX_HOST=${SITE_URL}
+    volumes:
+      - ./backend:/var/www/html/backend
+    networks:
+      - fut_laravel_production
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: frontend_production_${SITE}
+    tty: true # docker run -t
+    volumes:
+      - ./frontend/:/var/www/html/frontend/
+      - /var/www/html/frontend/node_modules
+    working_dir: /var/www/html/frontend
+    ports:
+      - ${FRONTEND_PORT}:3000
+    networks:
+      - fut_laravel_production
+
+  supervisor:
+    build:
+      context: ./supervisor
+      dockerfile: Dockerfile
+    container_name: supervisor_production_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    networks:
+      - fut_laravel_production
+
+  composer:
+    profiles: ["commands"]
+    build:
+      context: ./composer
+      dockerfile: Dockerfile
+    container_name: composer_production_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    working_dir: /var/www/html/backend
+    user: laravel
+    networks:
+      - fut_laravel_production
+
+  npm:
+    profiles: ["commands"]
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: npm_production_${SITE}
+    volumes:
+      - ./frontend/:/var/www/html/frontend/
+      - /var/www/html/frontend/node_modules
+    working_dir: /var/www/html/frontend
+    entrypoint: ["npm"]
+    networks:
+      - fut_laravel_production
+
+  artisan:
+    profiles: ["commands"]
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: artisan_production_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    working_dir: /var/www/html/backend
+    user: laravel
+    entrypoint: ["php", "/var/www/html/backend/artisan"]
+    networks:
+      - fut_laravel_production

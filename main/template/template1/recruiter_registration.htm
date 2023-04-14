@@ -1,0 +1,92 @@
+{HEADER_HTML}
+<script src='https://www.google.com/recaptcha/api.js'></script>
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+{HEADER_MIDDLE_HTML}
+<style>
+	.displayNone {
+		display: none;
+	}
+</style>
+<script>
+	window.setTimeout(function () {
+		$(".alert").fadeTo(500, 0).slideUp(500, function () {
+			$(this).remove();
+			$(".messageStackSuccess").addClass("displayNone"
+
+			);
+			// $messageStackSuccess
+		});
+	}, 50000);
+</script>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+			<h1 class="main-heading mb-0">{HEADING_TITLE}</h1>
+			{INFO_TEXT_SOCIAL_BUTTON}
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-7 mx-auto">
+			<div class="mb-3 small">Already a Member? {SIGN_IN} </div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3 d-none">
+			<!-- {design -->
+			{LEFT_HTML}
+		</div>
+
+		<div class="col-md-7 mx-auto">
+			{update_message}
+			<div class="card card-custom">
+
+				<div class="card-body card-body-custom">
+
+					{registration_form}
+					{SCRIPT}
+
+					<p class="label-text">{INFO_PERSONAL_DETAILS}</p>
+					{INFO_TEXT_EMAIL_ADDRESS1}
+					{password_data}
+					<div class="row">
+						<div class="col">
+							{INFO_TEXT_FIRST_NAME1}
+						</div>
+						<div class="col">
+							{INFO_TEXT_LAST_NAME1}
+						</div>
+					</div>
+					<p class="label-text">{INFO_COMPANY_DETAILS}</p>
+					{INFO_TEXT_POSITION1}
+					{INFO_TEXT_COMPANY_NAME1}
+					{INFO_TEXT_ADDRESS11}
+
+					<div class="row">
+						<div class="col-md-6">{INFO_TEXT_CITY1}</div>
+						<div class="col-md-6">{INFO_TEXT_ZIP_CODE1}</div>
+						<div class="col-md-6">{INFO_TEXT_COUNTRY1}</div>
+						<div class="col-md-6">{INFO_TEXT_STATE1}</div>
+						<div class="col-md-6">{INFO_TEXT_URL1}</div>
+						<div class="col-md-6">{INFO_TEXT_TELEPHONE1}</div>
+					</div>
+					<p class="label-text">{INFO_TEXT_PHOTO}</p>
+					<small id="emailHelp" class="text-muted font-14 pt-2">{INFO_TEXT_PHOTO1} <span
+							class="m-display-table">{INFO_UPLOAD_GIF}</span></small>
+					<!-- <p class="label-text mt-3">{INFO_TEXT_NEWSLETTER}</p> -->
+					<div class="my-3">{INFO_TEXT_NEWS_LETTER1}</div>
+					<div>{G_CAPTCHA}</div>
+					<small id="emailHelp" class="text-muted font-14">{INFO_TEXT_CONTINUE}{TERMS}
+						{INFO_AND}{PRIVACY}</small>
+					{INFO_TEXT_ALREADY_MEMBER}
+				</div>
+				<div class="card-footer bg-white card-footer-custom">
+					<div class="text-center">{add_save_button}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+{FOOTER_HTML}

@@ -1,0 +1,402 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- Bootstrap Core CSS -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom CSS -->
+        <link href="css/modern-business.css" rel="stylesheet">
+        <!-- Custom Fonts -->
+        <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,800,700italic,800italic' rel='stylesheet' type='text/css'>
+        <link href="css/jobboard-bootstrap3.css" rel="stylesheet" type="text/css">
+        <script type="javascript">
+            /** Document Ready Functions **/
+            /********************************************************************/
+            
+            $( document ).ready(function() {
+            
+                // Resive video
+                scaleVideoContainer();
+            
+                initBannerVideoSize('.video-container .poster img');
+                initBannerVideoSize('.video-container .filter');
+                initBannerVideoSize('.video-container video');
+                    
+                $(window).on('resize', function() {
+                    scaleVideoContainer();
+                    scaleBannerVideoSize('.video-container .poster img');
+                    scaleBannerVideoSize('.video-container .filter');
+                    scaleBannerVideoSize('.video-container video');
+                });
+            
+            });
+            
+            /** Reusable Functions **/
+            /********************************************************************/
+            
+            function scaleVideoContainer() {
+            
+                var height = $(window).height();
+                var unitHeight = parseInt(height) + 'px';
+                $('.homepage-hero-module').css('height',unitHeight);
+            
+            }
+            
+            function initBannerVideoSize(element){
+                
+                $(element).each(function(){
+                    $(this).data('height', $(this).height());
+                    $(this).data('width', $(this).width());
+                });
+            
+                scaleBannerVideoSize(element);
+            
+            }
+            
+            function scaleBannerVideoSize(element){
+            
+                var windowWidth = $(window).width(),
+                    windowHeight = $(window).height(),
+                    videoWidth,
+                    videoHeight;
+                
+                console.log(windowHeight);
+            
+                $(element).each(function(){
+                    var videoAspectRatio = $(this).data('height')/$(this).data('width'),
+                        windowAspectRatio = windowHeight/windowWidth;
+            
+                    if (videoAspectRatio > windowAspectRatio) {
+                        videoWidth = windowWidth;
+                        videoHeight = videoWidth * videoAspectRatio;
+                        $(this).css({'top' : -(videoHeight - windowHeight) / 2 + 'px', 'margin-left' : 0});
+                    } else {
+                        videoHeight = windowHeight;
+                        videoWidth = videoHeight / videoAspectRatio;
+                        $(this).css({'margin-top' : 0, 'margin-left' : -(videoWidth - windowWidth) / 2 + 'px'});
+                    }
+            
+                    $(this).width(videoWidth).height(videoHeight);
+            
+                    $('.homepage-hero-module .video-container video').addClass('fadeIn animated');
+                    
+            
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#"><img src="images/logo-jobboard.png"></a>
+                </div>
+				
+				    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav pull-right">
+    
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Candidate <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Post Resume</a></li>
+            <li><a href="#">Search Jobs</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </li>
+		
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employers <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Post Jobs</a></li>
+            <li><a href="#">Search Resumes</a></li>
+            <li><a href="#">Login</a></li>
+            <li><a href="#">Register</a></li>
+          </ul>
+        </li>
+		
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Forum</a></li>
+            <li><a href="#">Articles</a></li>
+          </ul>
+        </li>
+		    <li class="active"><a href="#">Login <span class="sr-only">(current)</span></a></li>
+			<li class="active"><a href="#">Register <span class="sr-only">(current)</span></a></li>
+        
+      </ul>
+    </div><!-- /.navbar-collapse -->
+        
+            </div>
+        </div>
+        <!-- Main jumbotron for a primary marketing message or call to action -->
+        <div class="homepage-hero-module">
+            <div class="video-container">
+                <div class="title-container">
+                    <div class="container home-margin">
+                        <!-- Job Section -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h1 class="headline">
+                                Find Job
+                            </div>
+                            <div class="col-md-6"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5"><input type="text" class="form-control" placeholder="Job title, keywords or company name"></div>
+                            <div class="col-md-5"><input type="text" class="form-control" placeholder="city, province or regiion"></div>
+                            <div class="col-md-2"><button type="button" class="btn btn-danger"><span class="glyphicon glyphicon-search"></span> </button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-5 category-text1">Or browse job offers by <span class="category-text2"><a href="#">Category</a></span></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 we-have">We have <span class="we-have-bold">23</span> job offers for you!</div>
+                        </div>
+                        <!-- /.row -->
+                    </div>
+                </div>
+                <div class="filter"></div>
+                <video autoplay loop class="fillWidth">
+                    <source src="jobboard.mp4" type="video/mp4" />
+                    Your browser does not support the video tag. I suggest you upgrade your browser.
+                </video>
+                <div class="poster hidden">
+                    <img src="http://www.videojs.com/img/poster.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="container" id="content">
+            <!-- Job Section -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header">
+                        Work with someone perfect for your team
+                    </h1>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-code" aria-hidden="true"></i><br>
+                        <h2>web developers</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-mobile" aria-hidden="true"></i><br>
+                        <h2>mobile developers</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-pie-chart" aria-hidden="true"></i><br>
+                        <h2>designers & Creatives</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-pencil-square" aria-hidden="true"></i><br>
+                        <h2>writers</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-headphones" aria-hidden="true"></i><br>
+                        <h2>virtual assistants</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-user" aria-hidden="true"></i><br>
+                        <h2>customer service agents</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i><br>
+                        <h2>sales & marketing eperts</h2>
+                    </center>
+                </div>
+                <div class="col-lg-3 jobcategory">
+                    <center>
+                        <i class="fa fa-briefcase" aria-hidden="true"></i><br>
+                        <h2>accountants & consultants</h2>
+                    </center>
+                </div>
+                <center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">see all categories</button></center>
+            </div>
+            <!-- /.row -->
+            <!-- Job Section -->
+            <div class="row">
+                <div class="col-lg-9">
+                    <h1 class="page-header2">
+                        Recent Jobs
+                    </h1>
+					<div class="table-responsive">
+                    <table class="table table-striped job-table">
+                        <tbody>
+                            <tr>
+                                <td width="75"><img src="images/job1.jpg" alt="" onload="this.width/=1" /></td>
+                                <td><a href="#">Software Engineer - Data Engineering</a></td>
+                                <td>Microsoft Corp.</td>
+                                <td>Dallas, USA</td>
+                            </tr>
+                            <tr>
+                                <td width="75"><img src="images/job2.jpg" alt="" onload="this.width/=1" /></td>
+                                <td><a href="#">Urgent Requirements-Electrical Engineer</a></td>
+                                <td>Infosys Ltd.</td>
+                                <td>Canada, USA</td>
+                            </tr>
+                            <tr>
+                                <td width="75"><img src="images/job3.jpg" alt="" onload="this.width/=1" /></td>
+                                <td><a href="#">Wanted Pesonnel Manager for Mysore</a></td>
+                                <td>Wipro Soft.</td>
+                                <td>Boston, USA</td>
+                            </tr>
+                            <tr>
+                                <td width="75"><img src="images/job4.jpg" alt="" onload="this.width/=1" /></td>
+                                <td><a href="#">Assistant Manager/Manager- Delivery</a></td>
+                                <td>Facebook</td>
+                                <td>Texas, USA</td>
+                            </tr>
+                            <tr>
+                                <td width="75"><img src="images/job5.jpg" alt="" onload="this.width/=1" /></td>
+                                <td><a href="#">Key Accounts Manager - Delhi/NCR</a></td>
+                                <td>Cisco</td>
+                                <td>N.Y. USA</td>
+                            </tr>
+                        </tbody>
+                    </table>
+					</div>
+                    <center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">see all jobs</button></center>
+                </div>
+                <div class="col-lg-3">
+                    <h1 class="page-header2">
+                        Featured Recruiter
+                    </h1>
+                    <div class="featured">
+                        <center><a href="#"><img src="images/featured1.jpg" class="img-responsive thumbnail img-hover spac"></a></center>
+                        <center><a href="#"><img src="images/featured2.jpg" class="img-responsive thumbnail img-hover spac"></a></center>
+                        <center><a href="#"><img src="images/featured3.jpg" class="img-responsive thumbnail img-hover spac"></a></center>
+                    </div>
+                    <center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">see all recruiters</button></center>
+                </div>
+            </div>
+			
+			        <!-- Career Article Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header2">
+                    Recent Articles
+                </h1>
+            </div>
+            <div class="col-md-4 col-sm-6 articles">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover img-rounded" src="images/career1.jpg" alt="">
+                </a>
+				<h2>11 Tips to Help You Get New Clients Through Cold Calling</h2>
+				<p class="article-desc ">Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures...</p>
+				<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">read more</button></center>
+            </div>
+            <div class="col-md-4 col-sm-6 articles">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover img-rounded" src="images/career2.jpg" alt="">
+                </a>
+				<h2>How to “Woo” a Recruiter and Land Your Dream Job</h2>
+				<p class="article-desc ">Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed...</p>
+				<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">read more</button></center>
+            </div>
+            <div class="col-md-4 col-sm-6 articles">
+                <a href="portfolio-item.html">
+                    <img class="img-responsive img-portfolio img-hover img-rounded" src="images/career3.jpg" alt="">
+                </a>
+				<h2>Hey Job Seeker, It’s Time To Get Up And Get Hired</h2>
+				<p class="article-desc ">One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his himself transformed in his...</p>
+				<center><button class="btn btn-lg btn-primary" onclick="location.href='#'" type="submit">read more</button></center>
+            </div>
+			<div class="home-btn-spacer"></div>
+		
+		</div>
+        <!-- /.row -->
+            <div class="container-fluid footer-container">		
+            <footer class="container">
+			<div class="row">
+			<div class="col-md-4">
+			<h3>About</h3>
+			<p>Morbi convallis bibendum urna ut viverra. Maecenas quis consequat libero, a feugiat eros. Nunc ut lacinia tortor morbi ultricies laoreet ullamcorper phasellus semper.</p>
+			<button class="btn btn-lg btn-info" onclick="location.href='#'" type="submit">GET STARTED</button>
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-2">
+			<strong><p>Job Seeker</p></strong>
+			<p><a href="#">Register Now</a></p>
+			<a href="#">Search Jobs</a></p>
+			<a href="#">Login</a></p>
+			<a href="#">View Applications</a></p>
+			<a href="#">Job Alerts</a></p>
+			</div>
+			<div class="col-md-2">
+			<strong><p>Employer</p></strong>
+			<p><a href="#">Post a Job</a></p>
+			<p><a href="#">Search Resume</a></p>
+			<p><a href="#">Sign In</a></p>
+			<p><a href="#">Register Now</a></p>
+			<p><a href="#">Resume Alerts</a></p>
+			</div>
+			<div class="col-md-2">
+			<strong><p>Information</p></strong>
+			<p><a href="#">About Us</a></p>
+			<p><a href="#">Terms & Conditions</a></p>
+			<p><a href="#">Privacy Policy</a></p>
+			<p><a href="#">Resources</a></p>
+			<p><a href="#">Contact Us</a></p>
+			</div>
+			</div>
+			
+			<hr class="line">
+			<br><br>
+			<div class="row">
+			<div class="col-md-10"><p>&copy; JobboardSoftware 2016</p></div>
+			<div class="col-md-2 pull-right">
+			<a href="https://www.facebook.com/bootsnipp"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
+	            <a href="https://twitter.com/bootsnipp"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
+	            <a href="https://plus.google.com/+Bootsnipp-page"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
+	            <a href="mailto:bootsnipp@gmail.com"><i id="social-em" class="fa fa-envelope-square fa-3x social"></i></a>
+			</div>
+			 
+			</div>
+			
+			
+            </footer>
+			</div>
+        </div>
+        <!-- /container -->
+        <!-- jQuery -->
+        <script src="js/jquery.js"></script>
+        <!-- Bootstrap Core JavaScript -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Script to Activate the Carousel -->
+        <script>
+            $('.carousel').carousel({
+                interval: 5000 //changes the speed
+            })
+        </script>
+    </body>
+</html>

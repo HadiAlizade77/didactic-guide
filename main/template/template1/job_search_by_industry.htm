@@ -1,0 +1,51 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+
+ <div class="container">
+    <div class="row">
+
+		
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="main-heading">{HEADING_TITLE}</h1>
+                </div>
+            </div>
+		<!-- Below Alert message File path is class/message_stack.php -->
+		{update_message} 
+            <div class="card card-custom">
+                <div class="card-body card-body-custom px-3">
+				<div class="row link-gray">
+				<div class="col-md-6">
+				<!-- BEGIN job_category1 -->
+                   {job_category1.category_name} 
+                   <!-- END job_category1 -->
+				</div>
+				<div class="col-md-6">
+				<!-- BEGIN job_category2 -->
+                 {job_category2.category_name}
+                   <!-- END job_category2 -->
+				</div>
+				</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{FOOTER_HTML}

@@ -1,0 +1,21 @@
+FROM node:lts-alpine3.16
+
+# update and install dependency
+RUN apk update && apk upgrade
+RUN apk add git g++ make libpng-dev nasm yarn
+
+RUN addgroup -g 1008 front && adduser -G front -g front -s /bin/sh -D front
+RUN mkdir -p /var/www/html/frontend
+
+RUN chown -R front:front /var/www/html/frontend*
+
+WORKDIR /var/www/html/frontend/
+
+# Cache and Install dependencies
+COPY package.json .
+COPY yarn.lock .
+# Copy app files
+COPY . .
+  
+RUN chmod +x ./scripts/entrypoint.sh
+ENTRYPOINT ["sh","./scripts/entrypoint.sh"]

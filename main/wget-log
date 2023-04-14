@@ -1,0 +1,11 @@
+--2023-04-07 15:51:40--  https://cpanel-box2543.bluehost.com/cpsess4334203555/download?skipencode=1
+Resolving cpanel-box2543.bluehost.com (cpanel-box2543.bluehost.com)... 50.87.184.32
+Connecting to cpanel-box2543.bluehost.com (cpanel-box2543.bluehost.com)|50.87.184.32|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: 38303 (37K) [text/html]
+Saving to: ‘download?skipencode=1’
+
+download?skipencode=1          0%[                                               ]       0  --.-KB/s               download?skipencode=1         42%[===================>                           ]  16.00K  69.4KB/s               download?skipencode=1        100%[==============================================>]  37.41K  82.1KB/s               download?skipencode=1        100%[==============================================>]  37.41K  82.1KB/s    in 0.5s    
+
+2023-04-07 15:51:42 (82.1 KB/s) - ‘download?skipencode=1’ saved [38303/38303]
+

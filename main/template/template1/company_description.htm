@@ -1,0 +1,104 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+			<div class="col-md-3 for-mobile">
+			<!-- Left Starts -->
+			{LEFT_HTML}
+			<!-- Left Ends --> 
+			</div>		
+					
+        <div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12">
+					<h1 class="main-heading">{HEADING_TITLE}</h1>
+				</div>
+			</div>
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message} 
+            <div class="card2 card-custom2">
+                <div class="card-body2 card-body-custom2">
+				 	  
+					<script language="javascript">
+						function set_action(action1)
+						{
+							document.preview.action.value=action1;
+						}
+						</script>
+<script language="javascript" type="text/javascript" src="../tinymce6/tinymce.min.js"></script>
+<script type="text/javascript">
+	tinymce.init({
+         selector: 'textarea[name="c_description"]',
+  plugins: [ 'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview','code','table','emoticons' ],
+  images_upload_url: '../tinymce6/upload_image.php',
+  force_br_newlines : true,
+  force_p_newlines : false,
+  branding: false,
+  promotion: false,
+  convert_urls: false,
+  relative_urls: false,
+	});
+</script>
+
+     <!-- Middle Starts -->
+				
+						<tr>
+							<td>
+							 <table width="100%" height="550"  border="0" cellpadding="0" cellspacing="0" id="main-jobs-table2">
+									<tr>{form}
+										<td bgcolor="#FFFFFF" valign="top">
+											<table  border="0" align="left" cellpadding="0" cellspacing="0" width="100%">
+												<tr>
+													<td>{INFO_TEXT_DESCRIPTION1}</td>
+												</tr>
+												<tr>
+													<td>&nbsp;</td>
+												</tr>
+												<tr>
+													<td>{button}</td>
+												</tr>
+											</table>
+										</td></form>
+									</tr>
+								</table>
+							</td>
+						</tr>
+					</table>
+					</div>
+				</td>
+				<!-- Middle Ends -->
+    <!-- Right Starts -->
+				
+    <!-- Right ends -->
+			</tr>
+			<tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+			</tr>
+		</table>
+	</td>
+</tr>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

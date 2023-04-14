@@ -1,0 +1,28 @@
+FROM node:lts-alpine3.16
+
+# update and install dependency
+RUN apk update && apk upgrade
+RUN apk --update add less
+RUN apk add git g++ make libpng-dev nasm yarn
+
+# create destination directory
+RUN mkdir -p /var/www/html/frontend
+WORKDIR /var/www/html/frontend
+
+
+COPY scripts/entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# copy package.json file to frontend directory.
+COPY package*.json /var/www/html/frontend/
+RUN yarn install
+ENTRYPOINT ["/entrypoint.sh"]
+
+# copy the rest of the frontend files to the frontend directory.
+COPY . .
+
+# expose 3000 on container
+EXPOSE 3000
+
+# Start command
+CMD [ "yarn", "dev" ]

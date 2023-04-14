@@ -1,0 +1,193 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script language="JavaScript">
+<!--
+function show_hide(){return 0;}
+function submitform()
+{
+ document.preview_job.action.value='back';
+ document.preview_job.submit();
+}
+//-->
+</script>
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 4000);
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 mx-auto">
+          <div class="row">
+            <div class="col-md-12">
+                <h1 class="main-heading">Preview Job</h1>
+            </div>
+        </div>
+		{update_message}
+            <div class="card card-custom border shadow-sm">
+                <div class="card-body card-body-custom">
+				
+							 {preview_job_form}
+							 
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_TITLE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_TITLE1}
+    </div>
+  </div>
+	
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_REF}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_REF1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_COUNTRY}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_COUNTRY1}
+    </div>							 
+	</div>
+	
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_STATE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_STATE1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_LOCATION}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_LOCATION1}
+    </div>							 
+	</div>	
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_SALARY}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_SALARY1}
+    </div>							 
+	</div>	
+	
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_SKILLS}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_SKILLS1}
+    </div>							 
+	</div>	
+	
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_INDUSTRY_SECTOR}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_INDUSTRY_SECTOR1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_VACANCY_SUMMARY}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_VACANCY_SUMMARY1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-top">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_DESCRIPTION}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_DESCRIPTION1}
+    </div>							 
+	</div>
+
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_RESP}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_RESP1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_QUAL}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_QUAL1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_BENEFIT}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_BENEFIT1}
+    </div>
+  </div>
+  <div class="form-group row align-items-center">
+    <label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_SCHEDULE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_SCHEDULE1}
+    </div>
+  </div>
+
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_APPLICATION_GOTO}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_APPLICATION_GOTO1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_JOB_TYPE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_JOB_TYPE1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_EXPERIENCE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_EXPERIENCE1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_ADVERTISE_WEEKS}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_ADVERTISE_WEEKS1}
+    </div>							 
+	</div>
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark">{INFO_TEXT_ADVERTISE_DATE}</label>
+    <div class="col-sm-9">
+      {INFO_TEXT_ADVERTISE_DATE1}
+    </div>							 
+	</div>
+
+	{INFO_TEXT_JOBFAIR1}
+
+{hidden_fields}
+
+
+	<div class="form-group row align-items-center">
+	<label for="staticEmail" class="col-sm-3 col-form-label fw-bold text-dark"></label>
+    <div class="col-sm-9">
+      {buttons}
+    </div>							 
+	</div>
+</form>	
+	
+          </div>
+            </div>
+        </div>
+      </div>
+    </div>
+{FOOTER_HTML}

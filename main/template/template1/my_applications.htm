@@ -1,0 +1,83 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row g-5">
+		<div class="col-md-3 m-none">
+		
+		<!-- Left Starts -->
+			{JOB_SEARCH_LEFT}
+			
+		<!-- Left Ends --> 
+		
+					
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="main-heading">{HEADING_TITLE}</h1>
+                </div>
+            </div>
+		{update_message}
+            <div class="card card-custom">
+                
+                <div class="card-body card-body-custom p-0">
+<div class="table-responsive-sm">
+<table class="table table-hover">
+									
+ 			<form method="post" name="page">
+												<thead>
+												<tr class="dataTableHeadingRow jobs-table-headbar">
+             <th class="">{TABLE_HEADING_JOB_TITLE}</th>
+            <td class="m-none"><b>{TABLE_HEADING_APPLIED_FOR}</b></td>
+             <th class="m-none">{TABLE_HEADING_JOB_INSERTED}</th>
+			<th class="">{TABLE_HEADING_APPLICATION_INSERTED}</th>
+			<th class="">{TABLE_HEADING_APPLICATION_DELETE}</th>
+            </tr>
+			</thead>
+			
+             <!-- BEGIN applications -->
+			 <tbody>
+            <tr{applications.row_selected}>
+				<td valign="top" class="dataTableContent">{applications.title}</td>
+                <td valign="top" class="dataTableContent m-none">{applications.applied_for}</td> 
+				<td valign="top" class="dataTableContent m-none">{applications.inserted}</td>
+				<td valign="top" class="dataTableContent">{applications.application_inserted}</td>
+				<td valign="top" class="dataTableContent">{applications.application_delete}</td>
+            </tr>
+			<tbody>
+            <!-- END applications -->
+			
+
+            </form>
+			
+			
+			{hidden_fields}
+			</table>
+</div>
+                </div>
+				
+				<div class="card-footer p-2 small">
+				<span class="float-left">{total}</span> <span class="float-right text-right">{list_page}&nbsp;{page}</span>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+		
+{FOOTER_HTML}

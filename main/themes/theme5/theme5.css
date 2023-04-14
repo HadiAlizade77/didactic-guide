@@ -1,0 +1,188 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+    background-color: #ffffff;
+	overflow-x: hidden;
+}
+.nav-link {
+	font-size: 16px;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: .8rem;
+    padding-left: .8rem;
+}
+.theme5-footer h2 {
+	font-size:78px;
+	color: #666;
+}
+.theme5-footer p {
+	text-transform:uppercase;
+	font-size: 14px;
+}
+.theme5-jobs-category {
+	border: 0;
+	background: transparent;
+	font-size: 16px;
+}
+.bg-banner {
+	margin-top:-16px;
+	background: url(../images/background.jpg) no-repeat center top;
+	padding:113px 0;
+}
+.home-banner {
+	background: #d1ecf1 url(../images/office.jpg) no-repeat top center;
+	padding:70px 0;
+}
+.theme5-location {
+	text-transform:capitalize;
+}
+.theme5-jobtitle {
+	font-size: 1rem;
+    font-weight: 600;
+}
+
+.card-bg { 
+    /* background: url(../images/navbar-bg.png); */
+    border-radius: 15px;
+    background: #ece6ea;
+ }
+.Full-time, .Contract, .Internship, .Temporary, .Part-time {
+	padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 25rem;
+	font-size:12px;
+}
+	
+.Full-time {
+	color: #0d6efd;
+    background-color: transparent;
+    border: 2px solid #0d6efd;
+}
+
+.Part-time {
+	color: #6c757d;
+    background-color: transparent;
+    border: 2px solid #6c757d;
+}
+
+.Temporary {
+	color: #dc3545;
+    background-color: transparent;
+    border: 2px solid #dc3545;
+}
+
+.Contract {
+	color: #ffcd39;
+    background-color: transparent;
+    border: 2px solid #ffcd39;
+}
+
+.Internship {
+	color: #3dd5f3;
+    background-color: transparent;
+    border: 2px solid #3dd5f3;
+}
+
+
+.navbar-brand>img {
+    display: block;
+    margin-top: 0;
+    height: 50px;
+    width: 250px;
+    padding: 0;
+    border-radius: 0;
+    object-fit: contain;
+    object-position: left;
+}
+
+
+
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+.social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+    
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+/*
+    Multicoloured Hover Variations
+*/
+
+#social-fb:hover {
+    color: #fff;
+}
+#social-tw:hover {
+    color: #fff;
+}
+#social-gp:hover {
+    color: #fff;
+}
+#social-em:hover {
+    color: #fff;
+}
+
+
+@media screen and (max-width:900px) {
+.mobile-featured-recruiter {
+	width:33%;
+	margin-bottom:10px;
+}
+ } 
+ 
+@media screen and (max-width:900px) {
+.input-group>.custom-file, .input-group>.custom-select, .input-group>.form-control, .input-group>.form-control-plaintext {
+    width: 100%;
+    margin-bottom: 5px;
+}
+}
+
+@media screen and (max-width:900px) {
+.input-group>.input-group-append>.btn, .input-group>.input-group-append>.input-group-text, .input-group>.input-group-prepend:first-child>.btn:not(:first-child), .input-group>.input-group-prepend:first-child>.input-group-text:not(:first-child), .input-group>.input-group-prepend:not(:first-child)>.btn, .input-group>.input-group-prepend:not(:first-child)>.input-group-text {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+}
+
+@media screen and (max-width:900px) {
+.input-group-append {
+    width: 100%;
+}
+}
+
+@media screen and (max-width:900px) {
+.mobile-featured-recruiter {
+	width:33%;
+	margin-bottom:10px;
+}
+ }
+@media screen and (max-width:900px) {
+.mobile-col-md-3 {
+	width:50%!important;
+}
+}
+
+@media screen and (max-width:900px) {
+.bg-banner {
+    padding: 0px 0;
+	background: none;
+}
+}
+
+@media screen and (max-width:900px) {
+h1 {
+        font-size: 1.5em!important;
+		color:#000;
+		font-weight: bold;
+}
+}

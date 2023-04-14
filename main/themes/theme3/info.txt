@@ -1,0 +1,3 @@
+Theme Name: THEME 3
+Description: 3 Articles, 3 Latest Jobs and 12 featured employers
+Version: 4.3

@@ -1,0 +1,314 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<SCRIPT LANGUAGE="JavaScript">
+function popUp(URL) 
+{
+ day = new Date();
+ id = day.getTime();
+ eval("page" + id + " = window.open(URL, '" + id + "', 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=700,height=400,left = 0,top = 0');");
+}
+function set_action(application)
+{
+ document.page.application_id.value=application;
+ {lower_value}
+ {higher_value}
+ document.page.submit();
+}
+function set_action1(application,action)
+{
+ if(application!='' && action!='') 
+ {
+   if(action=='applicant_confirm_delete')
+   {
+    var check= confirm("Warning: All the data of this applicant will also be deleted.");
+    if(check==true)
+    {
+     document.page.application_id.value=application;
+     document.page.action1.value=action;
+     {lower_value}
+     {higher_value}
+     document.page.submit();
+    }
+   }
+   else
+   {
+    document.page.application_id.value=application;
+    document.page.action1.value=action;
+    {lower_value}
+    {higher_value}
+    document.page.submit();
+   }
+  }
+}
+function view_status(round1)
+{
+ document.page.process_round.options[document.page.process_round.selectedIndex].value=round1;
+ document.page.submit();
+}
+
+function select_action1()
+{
+ if(document.page.quick_action.options[document.page.quick_action.selectedIndex].value=="send_bulk_mail") 
+ {
+  document.page.action1.value='send_bulk_mail';
+  document.page.submit();
+ }
+ else
+ return false;
+}
+function select_action2()
+{
+	var check;
+	var j=0;
+ check=false;
+	for (var i=0;i < document.page.elements.length;i++)
+	{
+		var e = document.page.elements[i];
+		if(e.type == "checkbox")
+		{
+			if((e.checked) == true)
+			{
+   	check=true;
+    if(document.page.select_action.options[document.page.select_action.selectedIndex].value=="compair_profile") 
+    {
+     j=j+1;
+     if(j==3)
+				  break;
+    }
+    else
+				break;
+			}
+		}
+	}
+ if(document.page.select_action.options[document.page.select_action.selectedIndex].value=="compair_profile") 
+ {
+  if(j<2)
+   alert('Please check two checkbox.');
+  else if(j>2)
+   alert('Please check two checkbox.');
+   if(j==2)
+   {
+    document.page.action1.value='compair_profile';
+    document.page.submit();
+   }
+	 document.page.select_action.value='';
+  
+ }
+	else if(check)
+	{
+  if(document.page.select_action.options[document.page.select_action.selectedIndex].value=="send_mail") 
+  {
+   document.page.action1.value='send_mail';
+   document.page.submit();
+  }
+  else
+  {
+   return false;
+  }
+ }
+ else
+	{
+	 document.page.select_action.value='';
+  alert('Please check atleast one checkbox.');
+	}
+}
+</script>
+<style>
+input[type="checkbox"]{
+    background: transparent;
+    border-radius: 1px;
+    box-sizing: border-box;
+    position: relative;
+    box-sizing: content-box;
+    width: 16px;
+    height: 16px;
+    border-width: 0;
+    margin:  0;
+    transition: all .3s linear;
+    border: 1px solid #a8a8a8;
+    display: -webkit-inline-box;
+}
+</style>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000);
+</script>
+<div class="container">
+    <div class="row">
+	
+		
+        <div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12 d-flex align-items-center mb-4">
+					<h1 class="">{INFO_TEXT_JOB_TITLE1}</h1>
+					<div class="d-flex ms-auto">
+						<div class="dropdown me-2">
+							<button class="btn btn-sm btn-text border dropdown-toggle" type="button"
+								id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-check-circle-fill text-muted" viewBox="0 0 16 16">
+									<path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+								  </svg> Select
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="">{INFO_TEXT_ALL_APPLICANT}</a>
+								<a class="">{INFO_TEXT_SELECTED_APPLICANT}</a>
+								<a class="">{INFO_TEXT_SEARCH_APPLICANT}</a>
+								<a class="">{INFO_TEXT_JOB_DETAIL}</a>
+								<a class="">{INFO_TEXT_ADD_APPLICANT}</a>
+							</div>
+						</div>
+
+						<div class="dropdown">
+							<button class="btn btn-sm btn-text border dropdown-toggle" type="button"
+								id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+								<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-pie-chart-fill text-muted" viewBox="0 0 16 16">
+									<path d="M15.985 8.5H8.207l-5.5 5.5a8 8 0 0 0 13.277-5.5zM2 13.292A8 8 0 0 1 7.5.015v7.778l-5.5 5.5zM8.5.015V7.5h7.485A8.001 8.001 0 0 0 8.5.015z"/>
+								  </svg> {INFO_TEXT_REPORTS}
+							</button>
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+								<a class="" href="#">{INFO_TEXT_REPORT_PIPELINE}</a>
+								<a class="" href="#">{INFO_TEXT_REPORT_ROUNDWISE}</a>
+								<a class="" href="#">{INFO_TEXT_REPORT_ROUNDWISE_SUMMARY}</a>
+								<a class="" href="#">{INFO_TEXT_VIEW_DATE_REPORT}</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		<!-- Below Alert message File path is class/message_stack.php -->
+
+		{update_message}
+		
+
+
+		
+            <div class="">
+
+                <div class="">
+				
+					<form name="page" method="post" >
+					<div class="card card-custom">
+					  
+					  <div class="card-body card-body-custom pt-2 pb-3">
+						  <!-- <div class="col-md-12 font-weight-bold mb-2"><span class="badge badge-secondary">{HEADING_TITLE_SEARCH}</span></div> -->
+					  <div class="row d-flex align-items-center">
+						<div class="col-md-6">
+						  <label for="validationCustom01">{INFO_TEXT_TRACKING_ROUND}</label>
+						  {INFO_TEXT_TRACKING_ROUND1}
+						</div>
+						<div class="col-md-6">
+						  <label for="validationCustom02">{INFO_TEXT_APPLICATION_STATUS}</label>
+						   {INFO_TEXT_APPLICATION_STATUS1}
+						</div>
+						</div>
+
+						</div>
+					  </div>
+					
+					  <div class="mt-1 card-header card-header-secondary bg-white border-bottom px-0 mx-0">
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">All Applicants</a>
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">Screening</a>
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">Telephone</a>
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">Interview</a>
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">Skill Check</a>
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">Background Check</a>
+						<a class="btn btn-outline-primary2 me-1 m-border small-btn" href="">Refference Check</a>
+					</div>		
+
+					<div class="d-flex align-items-center my-3">
+						<!-- <div>{HEADING_TITLE}</div>-->
+						<div>{check_link1}</div>
+						<div class="" style="font-size:12px;margin:5px 0 7px 12px;">{display_search_key} {check_link}</div>
+					</div>
+					<!-- BEGIN jobs -->	 
+				<div {jobs.row_selected}>	
+				<div class="card-1 card-custom card-hover mb-3">
+				  <div {jobs.row_color}>
+				  </div>
+				  <div class="card-body card-body-custom p-3">
+					<div class="d-flex">
+						<div class="flex-shrink-0">
+							<div class="d-flex align-items-center">
+								<div class="me-2">{jobs.check_box}</div>
+								<div>{jobs.photo}</div>
+							</div>
+							<span class="ms-4 selected-app-tag">{jobs.applicant_selected}</span>
+						</div>
+						<div class="flex-grow-1 ms-3">
+							<div class="d-flex align-items-center">
+								<h4 class="fw-bold m-0 me-4">{jobs.name}</h4>
+								<span class="small">[{jobs.application_id}]</span>
+								<div class="d-flex ms-auto">
+									<span class="float-right small me-4">{INFO_TEXT_RESUME_MATCH} : {jobs.match}%</span>
+									<span class="me-3">{jobs.action}</span>
+								</div>
+							</div>
+
+
+							<div class="small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-building" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M14.763.075A.5.5 0 0 1 15 .5v15a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V14h-1v1.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V10a.5.5 0 0 1 .342-.474L6 7.64V4.5a.5.5 0 0 1 .276-.447l8-4a.5.5 0 0 1 .487.022zM6 8.694 1 10.36V15h5V8.694zM7 15h2v-1.5a.5.5 0 0 1 .5-.5h2a.5.5 0 0 1 .5.5V15h2V1.309l-7 3.5V15z"/>
+								<path d="M2 11h1v1H2v-1zm2 0h1v1H4v-1zm-2 2h1v1H2v-1zm2 0h1v1H4v-1zm4-4h1v1H8V9zm2 0h1v1h-1V9zm-2 2h1v1H8v-1zm2 0h1v1h-1v-1zm2-2h1v1h-1V9zm0 2h1v1h-1v-1zM8 7h1v1H8V7zm2 0h1v1h-1V7zm2 0h1v1h-1V7zM8 5h1v1H8V5zm2 0h1v1h-1V5zm2 0h1v1h-1V5zm0-2h1v1h-1V3z"/>
+							  </svg> {jobs.company_name}</div>
+							<div class="small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-briefcase" viewBox="0 0 16 16">
+								<path d="M6.5 1A1.5 1.5 0 0 0 5 2.5V3H1.5A1.5 1.5 0 0 0 0 4.5v8A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-8A1.5 1.5 0 0 0 14.5 3H11v-.5A1.5 1.5 0 0 0 9.5 1h-3zm0 1h3a.5.5 0 0 1 .5.5V3H6v-.5a.5.5 0 0 1 .5-.5zm1.886 6.914L15 7.151V12.5a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5V7.15l6.614 1.764a1.5 1.5 0 0 0 .772 0zM1.5 4h13a.5.5 0 0 1 .5.5v1.616L8.129 7.948a.5.5 0 0 1-.258 0L1 6.116V4.5a.5.5 0 0 1 .5-.5z"/>
+							  </svg> {jobs.job_title}</div>
+							<div class="small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16">
+								<path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+								<path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+							  </svg> {jobs.location}</div>
+							<div class="small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bookmark-check" viewBox="0 0 16 16">
+								<path fill-rule="evenodd" d="M10.854 5.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 7.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+								<path d="M2 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v13.5a.5.5 0 0 1-.777.416L8 13.101l-5.223 2.815A.5.5 0 0 1 2 15.5V2zm2-1a1 1 0 0 0-1 1v12.566l4.723-2.482a.5.5 0 0 1 .554 0L13 14.566V2a1 1 0 0 0-1-1H4z"/>
+							  </svg> {jobs.education}</div>
+							<div class="small"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+								<path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
+								<path d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z"/>
+							  </svg> {jobs.experience}
+							</div>
+							<div class="small">
+								<i class="bi bi-save"></i> {INFO_TEXT_SOURCE}: {jobs.source}
+							</div>
+							<div class="small">
+								<i class="bi bi-clock"></i></i> {INFO_TEXT_APPLIED_ON} {jobs.inserted}
+							</div>
+
+							<div class="small text-dark fw-bold my-1">{INFO_TEXT_TRACKING_ROUND}</div>
+							{jobs.round}
+						</div>
+					  </div>
+
+				  </div>
+				</div>
+				</div>		   
+				<!-- END jobs -->
+				<div class="small text-muted">{total}</div>
+				{list_page}&nbsp;{page}
+				{hidden_fields}
+				</form>									   
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-md-3 small-font">
+			<div class="card card-custom">
+				<div class="card-body card-body-custom p-0">
+					{RIGHT_HTML}
+				</div>
+			</div>
+			
+		</div>
+	</div>
+</div>
+
+{FOOTER_HTML}

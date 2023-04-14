@@ -1,0 +1,184 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<div class="container-fluid bg-white py-5" style="margin: -42px 0 0 0;">
+<div class="container pt-5">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="col-md-12 mb-3">
+							<h5 class="color-dark">Featured Jobs</h5>
+								<!--<h5 class="card-header bg-white color-dark">Featured Jobs</h5>-->
+								
+									<div class="row">
+										<!-- BEGIN featured_jobs -->
+										<div class="col-md-6 mb-3">
+										<div class="card card-custom" style="height: 174px;">
+										<div class="card-body pb-0">
+											<div class="d-flex">
+												<div class="flex-shrink-0">
+													{featured_jobs.logo}
+												</div>
+												<div class="flex-grow-1 ms-3">
+													<h4>{featured_jobs.title}</h4>
+													<div class="small">{featured_jobs.company}</div>
+													<div class="small">{featured_jobs.location}</div>
+													<div class="small">{featured_jobs.salary}</div>
+													<div class="small">{featured_jobs.job_posted}</div>
+													<div class="small">{featured_jobs.experience}</div>
+												</div>
+											  </div>
+
+										</div>
+									</div>
+								</div>
+										<!-- END featured_jobs -->
+									
+								
+							</div>
+						</div>
+
+					</div>
+					<div class="card card-custom mb-3">
+						<h5 class="card-header bg-white color-dark" style="border-top-left-radius: 12px;border-top-right-radius: 12px;">Top 10 Hot Jobs</h5>
+						<div class="card-body p-0">
+							<div class="table-responsive theme7-jobs">
+								<table class="table table-hover">
+
+									<tbody>
+										<!-- BEGIN latest_jobs -->
+										<tr class="">
+											<td width="85" class="text-center">
+												<div class="theme7-logo">{latest_jobs.clogo}</div>
+											</td>
+											<td class="">
+												<h4 class="fw-bold m-0">{latest_jobs.title}</h4>
+												<div>
+													<div class="d-flex align-items-center">
+													<div>
+													<span class="text-capitalize me-2"><i class="bi bi-building"></i> {latest_jobs.company}</span>
+													<span class="me-2"><i class="bi bi-geo-alt"></i> {latest_jobs.location}</span>
+													</div>
+													<span class="ms-auto d-flex for-mobile">{latest_jobs.jobtype}</span>
+												</div>
+													<div>
+													<span class="me-2"><i class="bi bi-currency-dollar"></i> {latest_jobs.salary}</span>
+													<span class="me-2"><i class="bi bi-calendar4-week"></i> {latest_jobs.job_posted}</span>
+													<span class=""><i class="bi bi-briefcase"></i> {latest_jobs.experience}</span>
+												</div>
+												</div>
+												
+											</td>
+										</tr>
+										<!-- END latest_jobs -->
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item for-mobile" role="presentation">
+							<div class="nav-link">Jobs By:</div>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active" id="home-tab" data-bs-toggle="tab"
+								data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+								aria-selected="true">Category</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="profile-tab" data-bs-toggle="tab"
+								data-bs-target="#profile-tab-pane" type="button" role="tab"
+								aria-controls="profile-tab-pane" aria-selected="false">Company</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link" id="contact-tab" data-bs-toggle="tab"
+								data-bs-target="#contact-tab-pane" type="button" role="tab"
+								aria-controls="contact-tab-pane" aria-selected="false">Location</button>
+						</li>
+					</ul>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+							aria-labelledby="home-tab" tabindex="0">
+							<div class="card card-custom border-top-0">
+								<div class="card-body">{JOB_CATEGORY1}</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+							tabindex="0">
+							<div class="card card-custom border-top-0">
+								<div class="card-body">
+									<div class="row">
+										{JOB_COMPANY}
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+							tabindex="0">
+							<div class="card card-custom border-top-0">
+								<div class="card-body">{JOB_LOCATION}</div>
+							</div>
+						</div>
+					</div>
+
+
+				</div>
+			</div>
+
+
+
+		</div>
+		<!-- End Col 9 -->
+
+		<div class="col-md-3 pl-0">
+				<div class="card card-custom mb-3">
+					<h5 class="card-header bg-white color-dark" style="border-top-left-radius: 12px;border-top-right-radius: 12px;">Featured Recruiter</h5>
+					<!-- <h5 class="card-header bg-white color-dark">Top Employer</h5>-->
+					<div class="card-body">
+						<div class="row row-cols-3 row-cols-sm-2 row-cols-md-2 g-3">
+						<!-- BEGIN employer -->
+						<div class="col">{employer.emp}</div>
+						<!-- END employer -->
+					</div>
+					</div>
+				</div>
+
+
+			<div class="card card-custom">
+				<h5 class="card-header bg-white color-dark" style="border-top-left-radius: 12px;border-top-right-radius: 12px;">Articles</h5>
+				<div class="card-body">
+					<!-- BEGIN career_tools -->
+					<div class="d-flex theme8-media mb-4">
+						<div class="flex-shrink-0">
+						   {career_tools.image}
+						</div>
+						<div class="flex-grow-1 ms-3">
+							<h5 class="m-0 font-weight-bold">{career_tools.title}</h5>
+							<div class="m-0 small text-12"><i class="bi bi-calendar4-week"></i> {career_tools.date}</div>
+						   
+						</div>
+					  </div>
+			
+					 <!-- END career_tools -->
+				</div>
+			</div>
+
+			<div class="card card-custom mt-3">
+				<div class="card-body">
+					<p class="card-text mb-2">Get daily emails with jobs that match your sector</p>
+					{JOB_ALERT}
+				</div>
+			</div>
+
+
+		</div>
+		<!-- End Col 3 -->
+		<!--{RT_BANNER}-->
+	</div>
+</div>
+
+</div>
+</div>{FOOTER_HTML}

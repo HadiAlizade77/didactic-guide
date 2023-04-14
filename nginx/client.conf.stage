@@ -1,0 +1,15 @@
+server {
+    listen 80;
+    index index.html index.htm;
+    server_name bot.${NGINX_HOST};
+    root /var/www/html/frontend/dist;
+
+   add_header 'Access-Control-Allow-Origin' '*';
+   add_header 'Access-Control-Allow-Credentials' 'true';
+   add_header 'Access-Control-Allow-Headers' 'Authorization,Accept,Origin,DNT,X-CustomHeader,Keep-Alive,User-Agent,X-Requested-With,If-Modified-Since,Cache-Control,Content-Type,Content-Range,Range';
+   add_header 'Access-Control-Allow-Methods' 'GET,POST,OPTIONS,PUT,DELETE,PATCH';
+
+    location / {
+        try_files $uri $uri/ /index.html?$query_string;
+    }
+}

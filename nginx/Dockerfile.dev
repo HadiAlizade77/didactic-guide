@@ -1,0 +1,32 @@
+FROM nginx:stable-alpine
+
+ADD ./nginx.conf /etc/nginx/nginx.conf
+
+RUN mkdir -p /var/www/html/backend
+RUN mkdir -p /var/www/html/main
+
+RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
+
+RUN chown laravel:laravel /var/www/html/backend
+RUN chown laravel:laravel /var/www/html/main
+
+COPY api.conf.stage /etc/nginx/templates/api.conf.template
+COPY main.conf.stage /etc/nginx/templates/main.conf.template
+COPY client.conf.stage /etc/nginx/templates/client.conf.template
+
+COPY docker-default.sh /
+
+# Just in case the file mode was not properly set in Git
+RUN chmod +x /docker-default.sh
+
+RUN apk update && \
+    apk add --no-cache openssl && \
+    openssl req -x509 -nodes -days 365 \
+    -subj  "/C=CA/ST=QC/O=Company Inc/CN=remote-phase.com" \
+     -newkey rsa:2048 -keyout /etc/nginx/nginx-selfsigned.key \
+     -out /etc/nginx/nginx-selfsigned.crt;
+# This will delegate to the original `docker-entrypoint.sh`
+ENTRYPOINT ["/docker-default.sh"]
+
+CMD ["nginx", "-g", "daemon off;"]
+

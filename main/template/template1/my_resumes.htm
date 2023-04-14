@@ -1,0 +1,82 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" 
+
+);
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-12">
+            <h1 class="m-0">{HEADING_TITLE}</h1>
+			<div class="d-flex ms-auto">{add_new}</div>
+        </div>
+    </div>
+	<div class="mb-3 small">
+		{INFO_TEXT_MAX_RESUME}</div>
+
+    <div class="row">
+        <div class="col-md-12">
+		{update_message}
+            <div class="card card-custom">
+			
+				
+				
+                <div class="card-body card-body-custom p-0">
+			
+			<div class="table-responsive">
+			<table class="table table-hover">
+			<thead>
+			<tr>
+				<th>{TABLE_HEADING_RESUME_NAME}</th>
+				<th class="m-none">{TABLE_HEADING_INSERTED}</th>
+				<th class="m-none">{TABLE_HEADING_UPDATED}</th>
+				<th class="m-none">{TABLE_HEADINGVIEWED}</th>
+				<th class="m-none">{TABLE_HEADING_SEARCHABLE}</th>
+				<th class="m-none">{TABLE_HEADING_AVAILABILITY}</th>
+				<th>{TABLE_HEADING_EDIT}</th>
+				<th>{TABLE_HEADING_DELETE}</th>
+				<th>{TABLE_HEADING_VIEW}</th>
+				<th class="m-none">{TABLE_HEADING_DUPLICATE}</th>
+			</tr>
+			</thead>								
+             <!-- BEGIN resume -->
+            <tr{resume.row_selected}>
+             <td>{resume.resume_name}</td>
+             <td class="m-none">{resume.inserted}</td>
+             <td class="m-none">{resume.updated}</td>
+             <td class="m-none">{resume.viewed}</td>
+													<td class="m-none">{resume.search_status}</td>
+													<td class="m-none">{resume.available_status}</td>
+													<td>{resume.edit}</td></form>
+													<td>{resume.delete}</td>
+													<td>{resume.view}</td></form>
+													<td class="m-none">{resume.duplicate}</td></form>
+			</tr>
+            <!-- END resume -->
+												
+			</table>
+			</div>							
+                </div>
+				
+				<div class="card-footer small p-2">
+				<span class="float-left">{count_rows}</span> <span class="float-right text-right">{no_of_pages}</span>
+				</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

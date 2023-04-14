@@ -1,0 +1,190 @@
+{HEADER_HTML}
+<div class="container-fluid bg-white pb-5" style="margin: -19px 0 0 0!important;padding-top: 25px;">
+<div class="container">
+	<div class="row">
+		<div class="col-md-9">
+			<div class="row align-items-center">
+				<div class="col-md-5">
+					<img src="themes/theme3/images/banner.jpg" class="" height="205" style="width:300px;">
+				</div>
+				<div class="col-md-7">
+					<h2 class="fw-bold mb-1 m-font-fit mmt-15">{INFO_TEXT_WELCOME_HEADING}</h2>
+							<p class="" style="font-size: 18px;line-height: 29px;width:90%;">{INFO_TEXT_MESSAGE}</p>
+							<!-- {JOBSEEKER_LOGIN} {RECRUITER_LOGIN} -->
+				</div>
+
+
+			</div>
+			<div class="row mt-3">
+				<div class="col-md-12 m-p-0">
+					<div class="card card-color-theme3">
+						<!--<h5 class="card-header">{INFO_TEXT_M_QUICK_SEARCH}</h5>-->
+						<div class="card-body">
+							{job_search_form}
+							<div class="row g-3">
+										<div class="col-md-4">{INFO_TEXT_KEYWORD}</div>
+										<div class="col-md-3 mpr-0">{location}</div>
+										<div class="col-md-3 mpr-0">{industry_sector}</div>
+										<div class="col-md-2">{SEARCH_BUTTON}</div>
+										<div class="col-md-12 text-center small">{INFO_ADVANCED_SEARCH}</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- End Sarch Block -->
+
+			<div class="row mt-3">
+				<div class="col-md-12">
+					<div class="card card-theme3 shadow-sm">
+						<h5 class="card-header bg-white">{INFO_TEXT_EMPLOYER_SPOTLIGHT}</h5>
+						<div class="card-body">
+							<!-- BEGIN banner -->
+							<div class="row">
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+									{banner.emp1}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+									{banner.emp2}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+									{banner.emp3}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+									{banner.emp4}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2">
+									{banner.emp5}
+								</div>
+								<div class="col-6 col-sm-3 col-md-2 col-lg-2 col-xl-2 mb-3">
+									{banner.emp6}
+								</div>
+							</div>
+							<!-- END banner -->
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="row mt-3">
+				<div class="col-md-12">
+					<ul class="nav nav-tabs" id="myTab" role="tablist">
+						<li class="nav-item" role="presentation">
+							<button class="nav-link active nav-link-theme3" id="home-tab" data-bs-toggle="tab"
+								data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane"
+								aria-selected="true">{INFO_TEXT_JOBS_BY_CATEGORY}</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link nav-link-theme3" id="profile-tab" data-bs-toggle="tab"
+								data-bs-target="#profile-tab-pane" type="button" role="tab"
+								aria-controls="profile-tab-pane"
+								aria-selected="false">{INFO_TEXT_JOBS_BY_COMPANY}</button>
+						</li>
+						<li class="nav-item" role="presentation">
+							<button class="nav-link nav-link-theme3" id="contact-tab" data-bs-toggle="tab"
+								data-bs-target="#contact-tab-pane" type="button" role="tab"
+								aria-controls="contact-tab-pane"
+								aria-selected="false">{INFO_TEXT_JOBS_BY_LOCATION}</button>
+						</li>
+					</ul>
+					<div class="tab-content" id="myTabContent">
+						<div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel"
+							aria-labelledby="home-tab" tabindex="0">
+							<div class="card card-theme3 shadow-sm">
+								<div class="card-body">
+									{JOB_CATEGORY}
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab"
+							tabindex="0">
+							<div class="card card-theme3 shadow-sm">
+								<div class="card-body">
+									{JOB_COMPANY}
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab"
+							tabindex="0">
+							<div class="card card-theme3 shadow-sm">
+								<div class="card-body">
+									{JOB_LOCATION}
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+				<!-- Latest articles -->
+				<div class="container">
+					<div class="text-center mt-5">
+						<div class="col-lg-12 d-flex align-items-center mb-3">
+							<h3 class="m-0">
+								{LATEST_ARTICLES}
+								</h1>
+								<div class="d-flex ms-auto">{ALL_ARTICLES}</div>
+						</div>
+						<div class="row">
+							{ARTICLE_HOME}
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-md-3 mb-3 m-m-t-15">
+
+			{CREATE_ACCOUNT_HOME}
+			<!-----------jobseeker recruiter login-------->
+
+			<!-- end----------------------------------------- -->
+
+			<div class="row mt-3">
+				<div class="col-md-12">
+					<div class="card card-theme3 shadow-sm">
+						<h5 class="card-header bg-white">{INFO_TEXT_LATEST_JOBS}</h5>
+						<div class="card-body pt-0">
+							<!-- BEGIN latest_jobs -->
+							<div class="d-flex mb-3 {latest_jobs.job_featured}">
+								<div class="flex-shrink-0">
+									<div class="job-img me-2">{latest_jobs.clogo}</div>
+								</div>
+								<div class="flex-grow-1">
+									<h5 class="m-0">{latest_jobs.title}</h5>
+									<p class="m-0 small"><i class="bi bi-building me-1"></i> {latest_jobs.company}</p>
+									<p class="m-0 small"><i class="bi bi-geo-alt me-1"></i> {latest_jobs.location}</p>
+									<p class="m-0 small"><i class="bi bi-wallet2 me-1"></i> {latest_jobs.salary}</p>
+									<p class="m-0 small"><i class="bi bi-calendar4-week me-1"></i> {latest_jobs.job_posted}</p>
+									<p class="m-0 small"><i class="bi bi-briefcase me-1"></i> {latest_jobs.experience}</p>
+									<p class="m-0 small">{latest_jobs.jobtype}</p>
+								</div>
+							</div>
+							<!-- END latest_jobs -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+<div class="row mt-3">
+	<div class="col-md-8 mx-auto">
+		<div class="card card-theme3 shadow-sm box-range-theme3">
+			<div class="card-body">
+				<div class="d-flex align-items-center d-initial">
+					<div class="mmb-15" style="font-size: 18px;width:85%;line-height: 22px;">Get daily emails in your inbox with jobs
+						that match your industry or sector.</div>
+					<div class="d-flex ms-auto theme3-form d-initial">{CREATE_ALERT}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+<!-- Page Content -->
+<!-- /.container -->
+{FOOTER_HTML}

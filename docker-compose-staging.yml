@@ -1,0 +1,205 @@
+version: "3"
+
+networks:
+  fut_laravel_stage:
+    ipam:
+      config:
+        - subnet: ${SUBNET}/24
+
+services:
+  socketi:
+    image: quay.io/soketi/soketi:1.4-16-debian
+    container_name: socketi_staging_${SITE}
+    ports:
+      - 6001:6001
+      - 9601:9601
+    environment:
+      SOKETI_DEBUG: 1
+    networks:
+      - fut_laravel_stage
+    command: bin/server.js start
+
+  redis:
+    image: redis:alpine
+    container_name: redis_staging_${SITE}
+    restart: unless-stopped
+    ports:
+      - ${REDIS_PORT}:6379
+    networks:
+      - fut_laravel_stage
+
+  mysql:
+    image: mysql:5.7.29
+    container_name: mysql_staging_${SITE}
+    restart: unless-stopped
+    tty: true
+    ports:
+      - ${MYSQL_PORT}:3306
+    volumes:
+      - ./mysql:/var/lib/mysql
+    depends_on:
+      - redis
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      SERVICE_TAGS: ${SERVICE_TAGS}
+      SERVICE_NAME: ${SERVICE_NAME}
+    networks:
+      - fut_laravel_stage
+
+  # bot:
+  #   build:
+  #     context: ./bot
+  #     dockerfile: Dockerfile
+  #   container_name: bot_staging_${SITE}
+  #   restart: unless-stopped
+  #   tty: true
+  #   volumes:
+  #     - ./bot:/bot
+  #   ports:
+  #     - 3001:3001
+  #     - 5800:5800
+  #   depends_on:
+  #     - redis
+  #     - site
+  #   networks:
+  #     - fut_laravel_stage
+
+  php:
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: php_staging_${SITE}
+    ports:
+      - ${PHP_PORT}:9000
+    volumes:
+      - ./backend:/var/www/html/backend
+    depends_on:
+      - mysql
+    networks:
+      - fut_laravel_stage
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  php7.2:
+    build:
+      context: ./php7.2
+      dockerfile: Dockerfile
+    container_name: php_s_staging_${SITE}
+    ports:
+      - ${PHP_OLD_PORT}:9000
+    volumes:
+      - ./backend:/var/www/html/main
+    depends_on:
+      - mysql
+    networks:
+      - fut_laravel_stage
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  site:
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile.stage
+    container_name: nginx_staging_${SITE}
+    ports:
+      - ${ADMIN_PORT}:80
+      - 443:443
+    environment:
+      - NGINX_HOST=${SITE_URL}
+    volumes:
+      - ./backend:/var/www/html/backend
+      - ./main:/var/www/html/main
+      - ./frontend:/var/www/html/frontend
+    depends_on:
+      - php
+      - frontend
+    networks:
+      - fut_laravel_stage
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.stage
+    container_name: frontend_staging_${SITE}
+    tty: true
+    volumes:
+      - ./frontend:/var/www/html/frontend/
+    working_dir: /var/www/html/frontend
+    networks:
+      - fut_laravel_stage
+
+  supervisor:
+    build:
+      context: ./supervisor
+      dockerfile: Dockerfile
+    container_name: supervisor_staging_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    networks:
+      - fut_laravel_stage
+
+  adminer:
+    image: adminer
+    container_name: adminer_staging_${SITE}
+    restart: always
+    ports:
+      - ${ADMINER_PORT}:8080
+    networks:
+      - fut_laravel_stage
+
+  composer:
+    profiles: ["commands"]
+    build:
+      context: ./composer
+      dockerfile: Dockerfile
+    container_name: composer_staging_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    working_dir: /var/www/html/backend
+    user: laravel
+    networks:
+      - fut_laravel_stage
+
+  npm:
+    profiles: ["commands"]
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.stage
+    container_name: npm_staging_${SITE}
+    volumes:
+      - ./frontend/:/var/www/html/frontend/
+      - /var/www/html/frontend/node_modules
+    working_dir: /var/www/html/frontend
+    entrypoint: ["npm"]
+    networks:
+      - fut_laravel_stage
+
+  artisan:
+    profiles: ["commands"]
+    build:
+      context: ./php
+      dockerfile: Dockerfile
+    container_name: artisan_staging_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    working_dir: /var/www/html/backend
+    entrypoint: ["php", "/var/www/html/backend/artisan"]
+    networks:
+      - fut_laravel_stage
+
+  nodepackage:
+    profiles: ["commands"]
+    build:
+      context: ./nodepackage
+      dockerfile: Dockerfile
+    container_name: nodepackage_staging_${SITE}
+    volumes:
+      - ./backend:/var/www/html/backend
+    working_dir: /var/www/html/backend
+    networks:
+      - fut_laravel_stage

@@ -1,0 +1,3 @@
+Theme Name: THEME 5
+Description: Configure:</b><br>big middle picture theme<br>
+Version: 4.5

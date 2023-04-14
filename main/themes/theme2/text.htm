@@ -1,0 +1,100 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<div class="container-fluid bg-light pb-5">
+<div class="container">
+	<div class="row g-5 no-gap">
+		<div class="col-md-9">
+			<section class="mb-4">
+				<div class="d-flex align-items-center">
+					<h4 class="heading-title-theme2">Recent Jobs</h4>
+					<div class="d-flex ms-auto">{ALL_JOBS}</div>
+				</div>
+
+				<!-- BEGIN latest_jobs -->
+				<div class="d-flex align-items-center card-hover job-list-theme2 {latest_jobs.job_featured}">
+					<div class="flex-shrink-0">
+						<div class="job-img">{latest_jobs.clogo}</div>
+					</div>
+					<div class="flex-grow-1 ms-3">
+						<h5 class="theme2">{latest_jobs.title}</h5>
+						<div>{latest_jobs.company}<span class="mx-1">{latest_jobs.location}</span></div>
+						<div>{latest_jobs.salary}<span class="mx-1">{latest_jobs.job_posted}</span>
+							<span>{latest_jobs.experience}</span></div>
+					</div>
+					<div class="d-flex ms-auto">
+						<div class="">{latest_jobs.jobtype}</div>
+					</div>
+				</div>
+				<!-- END latest_jobs -->
+			</section>
+			<section>
+				<div>
+					<h5 class="heading-title-theme2">Recent Articles</h5>
+				</div>
+				<div class="row g-3">
+					{ARTICLE_HOME}
+				</div>
+			</section>
+		</div>
+
+
+		<div class="col-md-3">
+
+			<section class="mb-4">
+				<div class="card card-theme2">
+
+					<div class="card-body">
+						<h4 class="heading-title-theme2">Featured Recruiter</h4>
+						<div class="row row-cols-2 row-cols-sm-2 row-cols-md-2 g-3">
+							<!-- BEGIN banner -->
+							<div class="col">
+								{banner.banner}
+							</div>
+							<!-- END banner -->
+						</div>
+						<div class="text-center">
+							{ALL_RECRUITERS}
+						</div>
+					</div>
+
+				</div>
+			</section>
+
+			<section class="mb-4">
+				<div class="card card-theme2">
+					<div class="card-body">
+						<h4 class="heading-title-theme2">Jobs by categories</h4>
+						<div class="">
+							<div>{CATEGORY1}</div>
+							<div>{CATEGORY2}</div>
+							<div>{CATEGORY3}</div>
+							<div>{CATEGORY4}</div>
+							<div>{CATEGORY5}</div>
+							<div>{CATEGORY6}</div>
+							<div>{CATEGORY7}</div>
+							<div>{CATEGORY8}</div>
+						</div>
+						<div class="text-center">{ALL_CATEGORIES}</div>
+					</div>
+				</div>
+			</section>
+
+			<section>
+				<div class="card card-theme2">
+					<div class="card-body">
+						<p class="">Create a job alert for your jobs and get notified by email</p>
+						{CREATE_ALERT}
+					</div>
+				</div>
+			</section>
+
+
+		</div>
+
+	</div>
+</div>
+</div>
+
+
+
+{FOOTER_HTML}

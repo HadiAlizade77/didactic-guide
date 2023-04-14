@@ -1,0 +1,68 @@
+<!-- display jobfair detail-->
+{HEADER_HTML}
+{HEADER_MIDDLE}
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+		{update_message}
+            <div class="card card-custom mb-4">
+                <!--<div class="card-header card-header-custom">
+                    <h1 class="main-heading">{HEADING_TITLE}</h1>
+                </div>-->
+               <div class="card-header bg-white">
+				<div class="media">
+				  {jobfair_logo}
+				  <div class="media-body">
+					<h1 class="display-5 mt-0">{jobfair_title}</h1>
+					<h5 class="text-muted"><i class="fa fa-map-marker faicons2" aria-hidden="true"></i> {jobfair_location}</h5>
+					<h5 class="text-muted"><i class="fa fa-calendar faicons2" aria-hidden="true"></i> {jobfair_startdate}</h5>
+					<div>{jobfair_short_desc}</div>
+				  </div>
+				</div>
+				</div>
+				<div class="card-body card-body-custom">
+				<div class="row">
+					<div class="col-md-6">{jobfair_description}</div>
+					<div class="col-md-6">{jobfair-video}</div>
+				</div>
+				
+				<div class="row mt-5">
+					<div class="col-md-9">
+					<h4 class="mb-2">Venue Details</h4>
+					<p>{jobfair_venue}</p>
+					</div>
+					<div class="col-md-6">{jobfair-map-url}</div>
+				</div>
+                </div>
+            </div>
+			
+			<div class="card card-custom">
+				<div class="card-header card-header-custom">
+                    <h1 class="main-heading">Jobs</h1>
+                </div>
+				<div class="card-body card-body-custom">
+					{JOB_DISPLAY}
+				</div>
+				<div class="card-footer text-center">{VIEW_ALL_JOBS}</div>
+			</div>
+        </div>
+    </div>
+</div>
+ 
+{FOOTER_HTML}

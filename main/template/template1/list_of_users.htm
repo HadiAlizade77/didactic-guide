@@ -1,0 +1,125 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+<script src="{INFO_TEXT_JSCRIPT_FILE}"></script>
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 for-mobile">
+            <!-- Left Starts -->
+            {LEFT_HTML}
+            <!-- Left Ends -->
+        </div>			
+        
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1 class="main-heading">{HEADING_TITLE}</h1>
+                </div>
+            </div>
+			<!-- Below Alert message File path is class/message_stack.php -->
+			{update_message} 
+            <div class="card card-custom">
+                <div class="card-body card-body-custom">
+                    
+                    {user_form}
+                    <div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">
+                            {INFO_TEXT_FULL_NAME}							
+						</label>
+						<div class="col-sm-9">
+                            {INFO_TEXT_FULL_NAME1}							
+						</div>
+					</div>
+                    <div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">
+                            {INFO_TEXT_EMAIL_ADDRESS}							
+						</label>
+						<div class="col-sm-9">
+                            {INFO_TEXT_EMAIL_ADDRESS1}							
+						</div>
+                    </div>
+                    <div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">
+                            {INFO_TEXT_CONFIRM_EMAIL_ADDRESS}							
+						</label>
+						<div class="col-sm-9">
+                            {INFO_TEXT_CONFIRM_EMAIL_ADDRESS1}							
+						</div>
+                    </div>                    
+                    
+                    {password_data}
+					<div class="form-group row">
+						<label for="" class="col-sm-3 col-form-label">
+                            						
+						</label>
+						<div class="col-sm-9">
+                            {user_button}
+						</div>
+                    </div>
+					
+					
+                    
+                </div>
+            </div>
+            
+            <div class="card card-custom mt-3">
+                <div class="card-header card-header-custom">
+                    <h4 class=""><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-people" viewBox="0 0 16 16">
+                        <path d="M15 14s1 0 1-1-1-4-5-4-5 3-5 4 1 1 1 1h8zm-7.978-1A.261.261 0 0 1 7 12.996c.001-.264.167-1.03.76-1.72C8.312 10.629 9.282 10 11 10c1.717 0 2.687.63 3.24 1.276.593.69.758 1.457.76 1.72l-.008.002a.274.274 0 0 1-.014.002H7.022zM11 7a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm3-2a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM6.936 9.28a5.88 5.88 0 0 0-1.23-.247A7.35 7.35 0 0 0 5 9c-4 0-5 3-5 4 0 .667.333 1 1 1h4.216A2.238 2.238 0 0 1 5 13c0-1.01.377-2.042 1.09-2.904.243-.294.526-.569.846-.816zM4.92 10A5.493 5.493 0 0 0 4 13H1c0-.26.164-1.03.76-1.724.545-.636 1.492-1.256 3.16-1.275zM1.5 5.5a3 3 0 1 1 6 0 3 3 0 0 1-6 0zm3-2a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/>
+                      </svg> {HEADING_TITLE1}</h4>
+                </div>
+                <div class="card-body card-body-custom p-0">
+                    <table class="table table-hover">
+                        <tr class="jobs-table-headbar">
+                            <td>{TABLE_HEADING_NAME}</td>
+                            <td class="m-none">{TABLE_HEADING_EMAIL_ADDRESS}</td>
+                            <td class="m-none">{TABLE_HEADING_INSERTED}</td>
+                            <td>{TABLE_HEADING_CHANGE_PASSWORD}</td>
+                            <td>{TABLE_HEADING_STATUS}</td>
+                        </tr>
+                        <!-- BEGIN users -->
+                        <tr {users.row_selected}>
+                            <td>{users.name}</td>
+                            <td class="m-none">{users.email_address}</td>
+                            <td class="m-none">{users.inserted}</td>
+                            <td>{users.change_password}</td>
+                            <td>{users.status}</td>
+                        </tr>
+                        <!-- END users -->
+                    </table>
+                    <table border="0" width="100%" cellspacing="0" cellpadding="2">
+                        <tr>
+                            <td>{count_rows}</td>
+                            <td align="right">{no_of_pages}</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="right">{new_button}</td>
+                        </tr>
+                    </table>
+                    
+                    <!-- Middle Ends -->
+                    <!-- Right Starts -->
+                    
+                    <!-- Right ends -->
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{FOOTER_HTML}

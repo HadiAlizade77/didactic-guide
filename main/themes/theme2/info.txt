@@ -1,0 +1,3 @@
+Theme Name: THEME 2
+Description: Configure:</b><br>Video Theme<br>
+Version: 4.2

@@ -1,0 +1,37 @@
+.cookiealert {
+    position: fixed;
+    bottom: 20px;
+    width: 300px;
+    margin: 0 auto!important;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(100%);
+    transition: all 500ms ease-out;
+    padding: 15px;
+    border-radius: 10px;
+    right: 20px;
+}
+
+.cookiealert.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0%);
+    transition-delay: 1000ms;
+    text-align: left;
+    z-index: 10000;
+}
+
+.cookiealert a {
+    text-decoration: underline
+}
+
+.cookiealert .acceptcookies {
+    margin-left: 10px;
+    vertical-align: baseline;
+}
+@media only screen and (max-width: 900px) {
+    .cookiealert.show {
+    display: none;
+    }
+}

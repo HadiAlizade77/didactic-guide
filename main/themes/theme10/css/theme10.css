@@ -1,0 +1,278 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	overflow-x: hidden;
+
+    
+}
+
+a:hover {color:#DF9504!important;}
+
+.btn-full {
+    width:100%;
+}
+
+.navbar-brand>img {
+    display: block;
+    height: 60px;
+    object-fit: contain;
+    object-position: left;
+    border-radius: 3px;
+    padding: 3px 7px;
+	width: 200px;
+}
+.footer-logo {
+	height: 50px;
+    width: 200px;
+    object-fit: contain;
+    object-position: left;
+}
+.bgblue{
+    padding: 20px 0;
+}
+.nav-item {
+	font-size:18px;
+}
+.bg-transparent {
+    background: transparent!important;
+    border-bottom: 0px!important;
+}
+.bg-darks {
+    background: #008752!important;
+    border-bottom: 0px!important;
+}
+
+.theme10-mini-profile-img {
+width: 55px;
+    height: 55px;
+}
+.theme10-carousel {
+    height: 300px!important;
+	background: #017537;
+}
+.theme10-form-control {
+	border-radius: 5px;
+	height: 50px;
+    padding-left: 25px;
+}
+.theme10-btn {
+	border-radius: 0px;
+}
+
+.carousel-caption h2, .carousel-caption p {
+    
+    display: table;
+    margin: 0 0 5px 0;
+}
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 4rem;
+      left: 13rem;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 17rem;
+}
+.theme10-featured-logo {
+    width: 100%;
+    height: 75px;
+    object-fit: contain;
+}
+.navbar-light .navbar-nav .nav-link {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff!important;
+    padding: 14px 25px;
+}
+.navbar-light .navbar-nav .nav-link:hover {
+    text-transform: capitalize;
+    font-size: 16px;
+    font-weight: 600;
+	color: #c6f4e2!important;
+}
+
+.home-banner-theme10 {
+    /* background: #008752 url(https://bpojobsite.com/themes/theme10/images/slider1.jpg) no-repeat center bottom; */
+    padding: 70px 0;
+    margin: -9px 0 0px 0;
+    background: #008752;
+    /* background: rgb(2,113,69) url(https://bpojobsite.com/themes/theme10/images/slider1.jpg) no-repeat center top;
+background: linear-gradient(180deg, rgba(2,113,69,1) 0%, rgba(0,135,82,1) 40%, rgba(15,170,109,1) 73%, rgba(9,193,120,1) 100%); */
+}
+.theme10-apply-btn  a{
+	    margin: 9px -20px 0 0;
+    border-radius: 0;
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    padding: 5px 25px;
+}
+.theme10_internalClass {
+	border-bottom:1px solid #ddd!important;
+}
+
+.theme10-btn-danger {
+    background: #fec300;
+    border-color: #fec300;
+    padding: 14px 0;
+    color: #000;
+	transition-duration: .3s;
+	border-radius:5px;
+}
+.theme10-btn-danger:hover {
+    background: #fec300d7;
+    border-color: #fec300d7;
+    padding: 14px 0;
+    color: #000;
+	transition-duration: .3s;
+	border-radius:5px;	
+}
+
+.theme10-btn-purple {
+	background: #fec300;
+    border-color: #fec300;
+    padding: 7px 15px;
+    color: #000!important;
+	transition-duration: .3s;
+}
+
+.theme10-btn-purple:hover {
+	background: #fec300d7;
+    border-color: #fec300d7;
+    padding: 7px 15px;
+    color: #000!important;
+	transition-duration: .3s;
+}
+
+
+.theme10-btn-orange {
+    background: #fff;
+    border-color: #f48908;
+    padding: 7px 15px;
+    color: #f48908!important;
+	transition-duration: .3s;
+	border-width: 2px;
+    display: none;
+}
+
+.theme10-btn-orange:hover {
+	background: #f48908;
+    border-color: #f48908;
+    padding: 7px 15px;
+    color: #fff!important;
+	transition-duration: .3s;
+    border-width: 2px;	
+}
+
+
+
+.theme10-bg-gray {
+	background:#fff!important;
+}
+.theme10-bg-gray2 {
+	background:#008752!important;
+	color:#fff!important;
+}
+.theme10-bg-gray2 a{
+	color:#fff!important;
+}
+
+.theme10-border-top {
+    border-top: 1px solid #059983!important;
+}
+
+.bg-grays {
+    background: #fff;
+	border-radius: 7px;
+    padding: 15px 25px 10px 25px;
+    border: 1px solid #ddd;
+}
+
+.theme10-navbar-brand {
+
+}
+.theme10_internalClass {
+	background: #2d2d2b!important;
+}
+
+/* .btn-primary {
+    background:#e27e06!important;
+    border: 2px solid #e27e06!important;
+    color: #fff!important;
+    border-radius: 50px;
+    font-weight: 600;
+	transition-duration: .3s;
+}
+.btn-primary:hover {
+    background:#f48908!important;
+    border: 2px solid #f48908!important;
+    color: #fff!important;
+    border-radius: 50px;
+    font-weight: 600;
+	transition-duration: .3s;
+}
+
+.btn-outline-secondary {
+    color: #404040!important;
+    border: 2px solid #ddd;
+    border-radius: 50px!important;
+    padding: 7px 20px;
+	transition-duration: .3s;
+}
+.btn-outline-secondary:hover {
+	color: #404040!important;
+    border:2px solid #ddd;
+    border-radius: 50px!important;
+    padding: 7px 20px;
+	background:#eee;
+	transition-duration: .3s;
+}
+ */
+
+ /* Featured Job Row */
+
+
+
+.featured-job-tag:before {
+    content: "Featured";
+    position: absolute;
+    left: 0;
+    top: -9px;
+    background: #e27e06;
+    color: #fff;
+    font-size: 10px;
+    border-radius: 502px;
+    padding: 0 5px;
+    border: 2px solid #e27e06;
+    font-weight: bold;
+  }
+
+
+.social-circle li a {
+    padding:8px;
+}
+.category-overlap {
+    position: absolute;
+    top: 100px;
+    left: 15px;
+    background: #fff;
+    padding: 5px 12px;
+    border-radius: 3px;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .home-banner-theme10 {
+        padding: 24px 0;
+    }
+}
+
+
+

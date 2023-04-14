@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<rss version="2.0"  xmlns:job="http://remotephase.com/rss/">
+<channel>
+<title>Government Services RSS - REMOTEPHASE</title>
+<description>Government Services jobs </description>
+<link>https://remotephase.com/</link><copyright>Copyright 2023 remotephase.com All Rights Reserved</copyright>
+<job:link  href="http://remotephase.com/rss/29.xml" rel="self" type="application/rss+xml"/>
+</channel>
+</rss>

@@ -1,0 +1,3 @@
+Theme Name: THEME 7
+Description: Configure:</b><br>Header Middle Banner Size:1003 x 400<br>
+Version: 4.7

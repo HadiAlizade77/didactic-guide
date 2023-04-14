@@ -1,0 +1,54 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}
+
+<!-- Below Script for auto close -->
+<style>
+    .displayNone {
+        display: none;
+    }
+</style>
+<script>
+    window.setTimeout(function() {
+       $(".alert").fadeTo(500, 0).slideUp(500, function(){
+           $(this).remove();
+        $( ".messageStackSuccess" ).addClass( "displayNone" );
+        // $messageStackSuccess
+       });
+   }, 50000););
+</script>
+
+<div class="container">
+	<div class="row">
+        <div class="col-md-12 d-flex align-items-center mb-12">
+            <h1 class="m-0">{HEADING_TITLE_ALL_FAIR} <span class="badge badge-secondary">{total_fair}</span></h1>
+			<form name="form1" class="d-flex ms-auto">{sort_jobfair}</form>
+        </div>
+    </div>
+
+    <div class="row">
+        
+				 <!-- BEGIN jobfair -->
+				 <div class="col-md-4">
+					<div class="card card-custom">
+					<div class="card-body card-body-custom text-center">
+						{jobfair.jobfair_image}
+					<h3 class="my-3">{jobfair.jobfair_name}</h3>
+					<div><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+						<path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+					  </svg> {jobfair.jobfair_location}</div>
+					<div class="mt-3 small text-muted">{jobfair.jobfair_desc}</div>
+			</div>
+		</div>				
+	</div>
+				<!-- END jobfair -->
+				
+				<div class="card-footer mt-4">
+				<ul class="pagination">
+		<li class="active">{no_of_pages}</li>
+	</ul>
+				
+	</div>
+</div>
+</div>
+
+{FOOTER_HTML}

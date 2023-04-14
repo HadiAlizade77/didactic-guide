@@ -1,0 +1,184 @@
+{HEADER_HTML}
+{HEADER_MIDDLE_HTML}  
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Job Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {LATEST_JOBS}
+                </h1>
+                <p class="head-desc">{INFO_MESSAGE1}</p>
+            </div>
+ <!-- BEGIN latest_jobs -->
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-body home-jobs">
+                    <center>{latest_jobs.logo}</center>
+                    <h1 class="job-title">
+                    	{latest_jobs.title}
+                	</h1>
+                    <p class="job-desc">{latest_jobs.summary}</p>
+                    </div>
+                </div>
+            </div>
+ <!-- END latest_jobs -->
+
+			<div class="home-btn-spacer"><center>{ALL_JOBS}</center></div>
+			<center></center>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>		<div class="hr">&nbsp;</div>		<div class="home-spacer"></div>
+        <!-- Categories Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Jobs by Categories
+                </h1>
+                <p class="head-desc">{JOB_CATEGORY_TEXT}</p>
+            </div>
+           {JOB_CATEGORY}
+			<div class="home-btn-spacer"></div>
+			<center>{ALL_CATEGORY}</center>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>		<div class="hr">&nbsp;</div>		<div class="home-spacer"></div>
+
+        <!-- Featured Logos Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {FEATURED_RECRUITERS}
+                </h1>
+                <p class="head-desc">{FEATURED_RECRUITERS_TEXT}</p>
+            </div>
+           
+			<!-- BEGIN featured -->
+            <div class="col-md-2 col-sm-3">
+                <center>{featured.employer}</center>
+            </div>
+			<!-- END featured -->
+           
+			<div class="home-btn-spacer"></div>
+			<center>{ALL_RECRUITERS}</center>
+        </div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>		<div class="hr">&nbsp;</div>		<div class="home-spacer"></div>
+		
+        <!-- Career Article Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {LATEST_ARTICLES}
+                </h1>
+                <p class="head-desc">{LATEST_ARTICLES_TEXT}</p>
+            </div>
+            {ARTICLE_HOME}
+			<div class="home-btn-spacer"></div>
+		<center>{ALL_ARTICLES}</center>
+		</div>
+        <!-- /.row -->
+		
+		<div class="home-spacer"></div>		<div class="hr">&nbsp;</div>		<div class="home-spacer"></div>
+		
+		<!-- Welcome Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    {WELCOME_MESSAGE}
+                </h1>
+                <p class="head-desc">{WELCOME_MESSAGE_TEXT}</p>
+            </div>
+            <div class="col-md-4">
+					<div class="panel panel-default">
+                    <div class="panel-body">
+                    <center><img src="themes/theme1/images/jobseeker.jpg" class="img-circle img-responsive img-hover img-circle-custom"></center>
+                    <center><h1 class="welcome-title">
+                    	{INFO_JOBSEEKER}
+                	</h1></center>
+                    <center><p class="welcome-desc">{SUBMIT_RESUME_TEXT}</p></center>
+					<div class="home-btn-spacer"></div>
+					<center>{JOBSEEKER_SIGN_UP}</center>
+					<div class="home-btn-spacer"></div>
+                    </div>
+					</div>
+            </div>
+            <div class="col-md-4">
+					<div class="panel panel-default">
+                    <div class="panel-body">
+                    <center><img src="themes/theme1/images/employer.jpg" class="img-circle img-responsive img-hover img-circle-custom"></center>
+                    <center><h1 class="welcome-title">
+                    	{INFO_EMPLOYER}
+                	</h1></center>
+                    <center><p class="welcome-desc">{EMPLOYER_TEXT}</p></center>
+					<div class="home-btn-spacer"></div>
+					<center>{RECRUITER_SIGN_UP}</center>
+					<div class="home-btn-spacer"></div>
+                    </div>
+					</div>
+            </div>
+            <div class="col-md-4">
+				<div class="panel panel-default">
+                <div class="panel-body">
+                    <center><img src="themes/theme1/images/advertiser.jpg" class="img-circle img-responsive img-hover img-circle-custom"></center>
+                    <center><h1 class="welcome-title">
+                    	{INFO_ADVERTISER}
+                	</h1/center>
+                    <center><p class="welcome-desc">{ADVERTISER_TEXT}</p></center>
+					<div class="home-btn-spacer"></div>
+					<center>{ADVERTISER_SIGN_UP}</center>
+					<div class="home-btn-spacer"></div>
+                    </div>
+					</div>
+            </div>
+		</div>
+        <!-- /.row -->
+				<div class="home-spacer"></div>		<div class="home-spacer"></div>
+		<div class="home-spacer"></div>		<div class="hr">&nbsp;</div>		<div class="home-spacer"></div>	
+		
+        <!-- About Us Section -->
+        <div class="row">
+			<div class="col-lg-12">
+                <h1 class="page-header">
+                    {ABOUT_US_HEADING}
+                </h1>
+                <p class="head-desc">{ABOUT_US_HEADING2} </p>
+            </div>
+			<div class="col-md-1">
+              
+            </div>
+            <div class="col-md-3">
+                <center><img class="img-responsive img-portfolio img-hover" src="themes/theme1/images/career1.jpg" alt=""></center>
+            </div>
+            <div class="col-md-7">
+                <p class="about">{ABOUT_US_TEXT}</p>
+            </div>
+			<div class="col-md-1">
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <hr>
+
+        <!-- Call to Action Section -->
+        <div class="well">
+            <div class="row">
+                <div class="col-md-8">
+                    <p>{GET_EMAIL_TEXT}</p>
+                </div>
+				
+				
+                <div class="col-md-3">
+                    {CREATE_ALERT}
+                </div>
+            </div>
+        </div>
+
+        <hr>
+    </div>
+
+{FOOTER_HTML}

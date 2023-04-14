@@ -1,0 +1,3 @@
+Theme Name: THEME 10
+Description: Large Middle Image, 3 Latest Jobs and 6 featured employers. You can search by location, category & company.
+Version: 4.10
