@@ -3,7 +3,7 @@ server {
     listen 443 ssl;
     server_name ${NGINX_HOST};
     index index.php index.html index.htm;
-    root /var/www/html/backend/public;
+    root /var/www/html/main;
     ssl_certificate     /etc/nginx/nginx-selfsigned.crt;
     ssl_certificate_key /etc/nginx/nginx-selfsigned.key;
       
