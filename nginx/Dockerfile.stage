@@ -6,10 +6,10 @@ RUN mkdir -p /var/www/html/backend
 RUN mkdir -p /var/www/html/main
 
 RUN addgroup -g 1000 laravel && adduser -G laravel -g laravel -s /bin/sh -D laravel
-RUN addgroup -g 1002 main && adduser -G main -g main -s /bin/sh -D main
+# RUN addgroup -g 1002 main && adduser -G main -g main -s /bin/sh -D main
 
 RUN chown laravel:laravel /var/www/html/backend
-RUN chown main:main /var/www/html/main
+RUN chown laravel:laravel /var/www/html/main
 
 COPY api.conf.stage /etc/nginx/templates/api.conf.template
 COPY main.conf.stage /etc/nginx/templates/main.conf.template

@@ -76,6 +76,7 @@ services:
       - ${PHP_PORT}:9000
     volumes:
       - ./backend:/var/www/html/backend
+      - ./main:/var/www/html/main
     depends_on:
       - mysql
     networks:
@@ -83,22 +84,22 @@ services:
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
-  php7.2:
-    build:
-      context: ./php7.2
-      dockerfile: Dockerfile
-    container_name: php_s_staging_${SITE}
-    ports:
-      - ${PHP_OLD_PORT}:9000
-    volumes:
-      - ./main:/var/www/html/main
-    depends_on:
-      - mysql
-    networks:
-      - fut_laravel_stage
-    tty: true
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
+  # php7.2:
+  #   build:
+  #     context: ./php7.2
+  #     dockerfile: Dockerfile
+  #   container_name: php_s_staging_${SITE}
+  #   ports:
+  #     - ${PHP_OLD_PORT}:9000
+  #   volumes:
+  #     - ./main:/var/www/html/main
+  #   depends_on:
+  #     - mysql
+  #   networks:
+  #     - fut_laravel_stage
+  #   tty: true
+  #   extra_hosts:
+  #     - "host.docker.internal:host-gateway"
 
   site:
     build:
