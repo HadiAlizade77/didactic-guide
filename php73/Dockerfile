@@ -72,6 +72,7 @@ RUN set -xe; \
 		"; \
 	fi; \
 	apt-get update; \
+	git config --global --unset http.proxy; \
 	apt-get install -y --no-install-recommends $fetchDeps; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
