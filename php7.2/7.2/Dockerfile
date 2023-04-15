@@ -169,11 +169,3 @@ RUN echo '#!/bin/bash' > /healthcheck && \
 
 # Clean up
 RUN apt-get remove -y git && apt-get autoremove -y && apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
-
-RUN mkdir -p /var/www/html/main
-
-RUN chown main:main /var/www/html/main
-
-WORKDIR /var/www/html/main
-
-

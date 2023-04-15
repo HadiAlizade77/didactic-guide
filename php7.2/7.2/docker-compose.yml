@@ -1,17 +1,12 @@
 version: "3"
 
 services:
-  php73:
+  php72:
     build:
       context: ./
       dockerfile: Dockerfile
-    depends_on:
-      - redis
-    hostname: php73
-    container_name: php73
+    hostname: php72
+    container_name: php72
     volumes:
       - ./configs:/cfgs
     env_file: .env
-
-  redis:
-    image: redis:latest
