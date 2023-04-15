@@ -55,12 +55,12 @@ RUN docker-php-ext-install tidy tokenizer wddx zend_test zip
 # RUN docker-php-ext-install pdo_firebird pdo_oci
 
 # install pecl extension
-RUN pecl install -d php_suffix=7.2 ds && \
-	pecl install -d php_suffix=7.2 ds imagick && \
-	pecl install -d php_suffix=7.2 ds igbinary && \
-	pecl install -d php_suffix=7.2 ds ssh2-1.0 && \
-	pecl install -d php_suffix=7.2 ds redis-4.0.1 && \
-	pecl install -d php_suffix=7.2 ds memcached-3.0.4 && \
+RUN pecl install php_suffix=7.2 ds && \
+	pecl install php_suffix=7.2 ds imagick && \
+	pecl install php_suffix=7.2 ds igbinary && \
+	pecl install php_suffix=7.2 ds ssh2-1.0 && \
+	pecl install php_suffix=7.2 ds redis-4.0.1 && \
+	pecl install php_suffix=7.2 ds memcached-3.0.4 && \
 	docker-php-ext-enable ds imagick igbinary ssh2 redis memcached
 
 # install pecl extension
