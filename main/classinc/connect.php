@@ -12,9 +12,9 @@ define('DB_DATABASE', 'remotephase');
 define('USE_PCONNECT', 'false');
 */
 //*
-define('DB_SERVER', 'localhost');
-define('DB_SERVER_USERNAME', 'dodnqvmy_jbsite');
-define('DB_SERVER_PASSWORD', '~LdEOT0d@$EI');
+define('DB_SERVER', 'mysql');
+define('DB_SERVER_USERNAME', 'root');
+define('DB_SERVER_PASSWORD', 'password');
 define('DB_DATABASE', 'dodnqvmy_jbbord');
 define('USE_PCONNECT', 'true');
 //*/
