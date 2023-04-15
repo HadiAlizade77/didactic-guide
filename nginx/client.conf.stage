@@ -1,5 +1,6 @@
 server {
     listen 80;
+    listen 443 ssl;
     index index.html index.htm;
     server_name bot.${NGINX_HOST};
     root /var/www/html/frontend/dist;

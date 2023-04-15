@@ -23,7 +23,7 @@ RUN chmod +x /docker-default.sh
 RUN apk update && \
     apk add --no-cache openssl && \
     openssl req -x509 -nodes -days 365 \
-    -subj  "/C=CA/ST=QC/O=Company Inc/CN=remote-phase.com" \
+    -subj  "/C=CA/ST=QC/O=Company Inc/CN=remotephase.com" \
      -newkey rsa:2048 -keyout /etc/nginx/nginx-selfsigned.key \
      -out /etc/nginx/nginx-selfsigned.crt;
 # This will delegate to the original `docker-entrypoint.sh`

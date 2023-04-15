@@ -1,5 +1,6 @@
 server {
     listen 80;
+    listen 443 ssl;
     server_name api.bot.${NGINX_HOST};
     index index.php index.html index.htm;
     root /var/www/html/backend/public;
