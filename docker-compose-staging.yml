@@ -76,7 +76,6 @@ services:
       - ${PHP_PORT}:9000
     volumes:
       - ./backend:/var/www/html/backend
-      - ./main:/var/www/html/main
     depends_on:
       - mysql
     networks:
