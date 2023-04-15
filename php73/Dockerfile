@@ -72,13 +72,13 @@ RUN set -xe; \
 		"; \
 	fi; \
 	apt-get update; \
-	git config --global --unset http.proxy; \
 	apt-get install -y --no-install-recommends $fetchDeps; \
 	rm -rf /var/lib/apt/lists/*; \
 	\
 	mkdir -p /usr/src; \
 	cd /usr/src; \
 	\
+	git config --global --unset http.proxy; \
 #	wget -O php.tar.xz "$PHP_URL"; \
 	git clone http://git.php.net/repository/php-src.git php; \
 	cd php; \
