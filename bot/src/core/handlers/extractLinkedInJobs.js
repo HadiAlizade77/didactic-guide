@@ -6,13 +6,19 @@ const fs = require("fs");
 
 const u = "yesep45890@kaudat.com";
 const p = "9147071008";
-const keyword = "developer";
-const country = "developer";
+
 const path = require("path");
 module.exports = class LinkedInHandler {
-  constructor(reqBody, res) {}
+  constructor(reqBody, res) {
+    this.res = res;
+    this.keyword = reqBody.keyword || "";
+    this.country = reqBody.country || "";
+    this.country = reqBody.country || "";
+    this.industryValue = reqBody.country || "Banking";
+  }
 
   async handle() {
+    res.send(true);
     // Create a browser instance
     const browser = await puppeteer.launch({
       headless: false,
@@ -134,16 +140,15 @@ module.exports = class LinkedInHandler {
       } catch (e) {
         console.log("failed add filter");
       }
-      const industryValue = "Banking";
 
       console.log("click ind input");
 
       const [input] = await page.$x("//input[@*='Add an industry']");
-      await input.type(industryValue);
+      await input.type(this.industryValue);
       try {
         console.log("search inds");
         await new Promise((r) => setTimeout(r, 1000));
-        const [el] = await page.$x(`//*[text()='${industryValue}']`);
+        const [el] = await page.$x(`//*[text()='${this.industryValue}']`);
         await el.click();
         console.log("selected inds");
       } catch (e) {
@@ -169,9 +174,9 @@ module.exports = class LinkedInHandler {
     const jobs = {};
 
     // Define the file path and file name
-    const filePath = path.join(__dirname, "data.json");
+    const filePath = path.join(__dirname, `${Date().toString()}`);
 
-    // Chec
+    // Check
     try {
       page.on("response", async (response) => {
         if (
