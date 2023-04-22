@@ -126,14 +126,14 @@ class SidebarContent extends Component {
               </li>
 
               <li>
-                <Link to="#" className="">
+                <Link to="/tasks" className="">
                   <i className="bx bx-file" />
                   <span>{this.props.t("Tasks List")}</span>
                 </Link>
               </li>
 
               <li>
-                <Link to="#" className="">
+                <Link to="/files" className="">
                   <i className="bx bx-file" />
                   <span>{this.props.t("Download Files")}</span>
                 </Link>
