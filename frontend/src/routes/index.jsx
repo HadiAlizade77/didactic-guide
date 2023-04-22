@@ -1,33 +1,37 @@
-import React from "react"
-import { Redirect } from "react-router-dom"
+import React from "react";
+import { Redirect } from "react-router-dom";
 // User profile
-import UserProfile from "../pages/Authentication/UserProfile"
+import UserProfile from "../pages/Authentication/UserProfile";
 
 // Authentication related pages
-import Login from "../pages/Authentication/Login"
-import Logout from "../pages/Authentication/Logout"
-import Register from "../pages/Authentication/Register"
-import ForgetPwd from "../pages/Authentication/ForgetPassword"
+import Login from "../pages/Authentication/Login";
+import Logout from "../pages/Authentication/Logout";
+import Register from "../pages/Authentication/Register";
+import ForgetPwd from "../pages/Authentication/ForgetPassword";
 
 // Dashboard
-import Dashboard from "../pages/Dashboard/index"
+import Dashboard from "../pages/Dashboard/index";
+import Tasks from "../pages/TasksTable/index";
+import Files from "../pages/FilesList/index";
 
 const authProtectedRoutes = [
   { path: "/dashboard", component: Dashboard },
+  { path: "/tasks", component: Tasks },
+  { path: "/files", component: Files },
 
   //profile
   { path: "/profile", component: UserProfile },
 
   // this route should be at the end of all other routes
   // eslint-disable-next-line react/display-name
-  { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> }
-]
+  { path: "/", exact: true, component: () => <Redirect to="/dashboard" /> },
+];
 
 const publicRoutes = [
   { path: "/logout", component: Logout },
   { path: "/login", component: Login },
   { path: "/forgot-password", component: ForgetPwd },
-  { path: "/register", component: Register }
-]
+  { path: "/register", component: Register },
+];
 
-export { authProtectedRoutes, publicRoutes }
+export { authProtectedRoutes, publicRoutes };

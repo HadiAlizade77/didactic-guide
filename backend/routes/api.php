@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\TaskController;
+use App\Http\Controllers\CsvController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,7 @@ use App\Http\Controllers\TaskController;
 */
 Route::get('/tasks', [TaskController::class, 'getTasks']);
 Route::post('/tasks', [TaskController::class, 'createTask']);
+Route::get('/csv', [CsvController::class, 'index']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

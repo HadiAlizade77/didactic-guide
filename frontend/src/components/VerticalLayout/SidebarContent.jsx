@@ -48,22 +48,21 @@ class SidebarContent extends Component {
 
   // componentDidUpdate() {}
 
-  scrollElement = item => {
+  scrollElement = (item) => {
     setTimeout(() => {
       if (this.refDiv.current !== null) {
         if (item) {
           const currentPosition = item.offsetTop;
           if (currentPosition > window.innerHeight) {
             if (this.refDiv.current)
-              this.refDiv.current.getScrollElement().scrollTop =
-                currentPosition - 300;
+              this.refDiv.current.getScrollElement().scrollTop = currentPosition - 300;
           }
         }
       }
     }, 300);
   };
 
-  activateParentDropdown = item => {
+  activateParentDropdown = (item) => {
     item.classList.add("active");
     const parent = item.parentElement;
 
@@ -112,16 +111,13 @@ class SidebarContent extends Component {
               <li>
                 <Link to="/#">
                   <i className="bx bx-home-circle" />
-                  <span className="badge rounded-pill bg-info float-end">
-                    04
-                  </span>
+                  <span className="badge rounded-pill bg-info float-end">04</span>
                   <span>{this.props.t("Dashboards")}</span>
                 </Link>
               </li>
 
               <li className="menu-title">{this.props.t("Apps")}</li>
 
-         
               <li>
                 <Link to="#" className="">
                   <i className="bx bx-file" />
@@ -129,6 +125,19 @@ class SidebarContent extends Component {
                 </Link>
               </li>
 
+              <li>
+                <Link to="#" className="">
+                  <i className="bx bx-file" />
+                  <span>{this.props.t("Tasks List")}</span>
+                </Link>
+              </li>
+
+              <li>
+                <Link to="#" className="">
+                  <i className="bx bx-file" />
+                  <span>{this.props.t("Download Files")}</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </SimpleBar>

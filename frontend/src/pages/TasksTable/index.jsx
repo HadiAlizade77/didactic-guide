@@ -5,7 +5,6 @@ import "react-datepicker/dist/react-datepicker.css";
 
 //Import Breadcrumb
 import Breadcrumbs from "../../components/Common/Breadcrumb";
-import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Tasks = () => {
@@ -54,7 +53,7 @@ const Tasks = () => {
                   onClick={this.handleOrderClicks}
                 >
                   <i className="mdi mdi-plus me-1" />
-                   Add New Order
+                  Add New Order
                 </Button>
               </div>
             </Col>

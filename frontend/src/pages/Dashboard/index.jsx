@@ -814,6 +814,7 @@ const Dashboard = () => {
                           <div className="mb-3 select2-container">
                             <Label>State</Label>
                             <Select
+                              disabled
                               value={state}
                               isMulti={false}
                               getOptionLabel={(i) => i.name}

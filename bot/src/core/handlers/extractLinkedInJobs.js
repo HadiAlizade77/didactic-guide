@@ -13,8 +13,7 @@ module.exports = class LinkedInHandler {
     this.res = res;
     this.keyword = reqBody.keyword || "";
     this.country = reqBody.country || "";
-    this.country = reqBody.country || "";
-    this.industryValue = reqBody.country || "Banking";
+    this.industryValue = reqBody.industryValue || "Banking";
   }
 
   async handle() {
@@ -174,7 +173,10 @@ module.exports = class LinkedInHandler {
     const jobs = {};
 
     // Define the file path and file name
-    const filePath = path.join(__dirname, `${Date().toString()}`);
+    const filePath = path.join(
+      __dirname,
+      `'../../../../../../backend/storage/app/public/${Date().toString()}.json`
+    );
 
     // Check
     try {
@@ -199,8 +201,8 @@ module.exports = class LinkedInHandler {
               experienceLevel: jobData.data.formattedExperienceLevel,
               location: jobData.data.formattedLocation,
               applyUrl:
-                jobData.data.applyMethod?.companyApplyUrl ??
-                jobData.data.applyMethod?.easyApplyUrl ??
+                jobData.data.applyMethod?.companyApplyUrl ||
+                jobData.data.applyMethod?.easyApplyUrl ||
                 "",
             };
             if (fs.existsSync(filePath)) {
@@ -343,5 +345,4 @@ module.exports = class LinkedInHandler {
 // const Mid_Senior = "f_E=4";
 // const Director = "f_E=5";
 // const Executive = "f_E=6";
-// handle();
 //experience
