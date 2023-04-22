@@ -13,7 +13,7 @@ const Tasks = () => {
   useEffect(() => {
     const fetchTasks = async () => {
       try {
-        const response = await axios.get("/api/tasks");
+        const response = await axios.get("http://api.bot.remotephase.com/api/tasks");
         setTasks(response.data);
       } catch (error) {
         console.error("Error fetching tasks:", error);

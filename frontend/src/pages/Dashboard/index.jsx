@@ -747,7 +747,7 @@ const Dashboard = () => {
     event.preventDefault();
     const payload = { industry, country, state, keyword, board };
     try {
-      const response = await axios.post("/api/tasks", payload);
+      const response = await axios.post("http://api.bot.remotephase.com/api/tasks", payload);
       console.log("New task created:", response.data);
     } catch (error) {
       console.error("Error creating task:", error);

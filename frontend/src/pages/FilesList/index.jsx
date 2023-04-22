@@ -10,7 +10,7 @@ const CsvTable = () => {
 
   useEffect(() => {
     axios
-      .get("/csv")
+      .get("http://api.bot.remotephase.com/api/csv")
       .then((response) => {
         setCsvFiles(response.data);
       })
