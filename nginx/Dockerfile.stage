@@ -20,15 +20,17 @@ COPY docker-default.sh /
 # Just in case the file mode was not properly set in Git
 RUN chmod +x /docker-default.sh
 
-# RUN apk update && \
-#     apk add --no-cache openssl && \
-#     openssl req -x509 -nodes -days 365 \
-#     -subj  "/C=CA/ST=QC/O=Company Inc/CN=remotephase.com" \
-#      -newkey rsa:2048 -keyout /etc/nginx/nginx-selfsigned.key \
-#      -out /etc/nginx/nginx-selfsigned.crt;
+RUN apk update && \
+    apk add --no-cache openssl && \
+    openssl req -x509 -nodes -days 365 \
+    -subj  "/C=CA/ST=QC/O=Company Inc/CN=remotephase.com" \
+     -newkey rsa:2048 -keyout /etc/nginx/nginx-selfsigned.key \
+     -out /etc/nginx/nginx-selfsigned.crt;
+     
 COPY certs/ca_bundle.crt /etc/nginx/bundle.crt
 COPY certs/private.key /etc/nginx/private.key
 
+     
 # This will delegate to the original `docker-entrypoint.sh`
 ENTRYPOINT ["/docker-default.sh"]
 
