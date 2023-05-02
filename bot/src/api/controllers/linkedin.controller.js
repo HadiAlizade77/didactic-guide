@@ -6,7 +6,7 @@ const LI = require('../../core/handlers/extractLinkedInJobs');
  * @public
  */
 
-exports.takeLastSc = async (req, res, next) => {
+exports.extract = async (req, res, next) => {
   const liService = new LI(req.body, res);
   let response = null;
   try {

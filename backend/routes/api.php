@@ -18,6 +18,7 @@ use App\Http\Controllers\CsvController;
 Route::get('/tasks', [TaskController::class, 'getTasks']);
 Route::post('/tasks', [TaskController::class, 'createTask']);
 Route::get('/csv', [CsvController::class, 'index']);
+Route::get('/nextTask', [TaskController::class, 'runTask']);
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

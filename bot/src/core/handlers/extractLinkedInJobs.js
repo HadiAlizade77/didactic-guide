@@ -3,7 +3,7 @@
 const puppeteer = require("puppeteer");
 const url = require("url");
 const fs = require("fs");
-
+const axios = require("axios");
 const u = "yesep45890@kaudat.com";
 const p = "9147071008";
 let converter = require("json-2-csv");
@@ -200,7 +200,8 @@ module.exports = class LinkedInHandler {
               job_title: jobData.data.title,
               job_industry: this.industryValue,
               job_short_description: jobData.data.description.text,
-              job_description: jobData.data.description.text.substring(0,190) + '...',              ,
+              job_description:
+                jobData.data.description.text.substring(0, 190) + "...",
               job_type: jobData.data.formattedEmploymentStatus,
               job_company_logo:
                 jobData.included[8].logo.image.rootUrl +
@@ -208,8 +209,20 @@ module.exports = class LinkedInHandler {
                 jobData.included[8].logo.image.artifacts[0]
                   .fileIdentifyingUrlPathSegment,
               experienceLevel: jobData.data.formattedExperienceLevel,
-              job_country: jobData.data.formattedLocation.split(',')['Beykoz, Istanbul, Turkey'.split(',').length -1].replace(/\s+/g, '') || '',
-              job_state: jobData.data.formattedLocation.split(',')['Beykoz, Istanbul, Turkey'.split(',').length -2].replace(/\s+/g, '') || 0,
+              job_country:
+                jobData.data.formattedLocation
+                  .split(",")
+                  ["Beykoz, Istanbul, Turkey".split(",").length - 1].replace(
+                    /\s+/g,
+                    ""
+                  ) || "",
+              job_state:
+                jobData.data.formattedLocation
+                  .split(",")
+                  ["Beykoz, Istanbul, Turkey".split(",").length - 2].replace(
+                    /\s+/g,
+                    ""
+                  ) || 0,
               job_company_name: jobData.included[8].name,
               job_apply_url:
                 jobData.data.applyMethod?.companyApplyUrl ||
@@ -332,7 +345,15 @@ module.exports = class LinkedInHandler {
 
     // Close the browser instance
     await browser.close();
-    const csv = await converter.json2csv(Object.values(jobs), options);
+    const csvFilePath = path.join(
+      __dirname,
+      `'../../../../../../backend/storage/app/public/${Date().toString()}.csv`
+    );
+    fs.writeFileSync(
+      filePath,
+      await converter.json2csv(Object.values(jobs), options)
+    );
+    await axios.get("http://api.bot.remotephase.com/api/nextTask");
   }
 };
 
